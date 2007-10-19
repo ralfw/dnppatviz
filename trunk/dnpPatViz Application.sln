@@ -1,8 +1,54 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contracts", "Contracts", "{430F88E1-1589-4250-8C95-3A8BBEA472DE}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "dnppv.contracts.fileadapter", "dnppv.contracts.fileadapter\dnppv.contracts.fileadapter.vbproj", "{9AE8C5E8-1E22-4BA1-B68A-F34BE396CBC5}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "dnppv.contracts.patternrecognizer", "dnppv.contracts.patternrecognizer\dnppv.contracts.patternrecognizer.vbproj", "{7E90D9B1-FA65-467E-9F54-55BE68987427}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "dnppv.contracts.patternfilter", "dnppv.contracts.patternfilter\dnppv.contracts.patternfilter.vbproj", "{31A4BC12-A1E3-4182-81CB-0F49B88C3CC5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PilePatternRecognizer", "PilePatternRecognizer", "{8A240010-AC82-403A-BFBE-3CB943333275}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PatternFilter", "PatternFilter", "{30C8E2E3-3ADD-4483-92BF-CBEC32134C4F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DemoClient", "DemoClient", "{5313E63E-C016-4766-8C67-D37E1D1BC08C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TextFileAdapter", "TextFileAdapter", "{8AC1870E-35AC-43C9-B283-DDB30313831A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dnppv.pilepatternrecognizer", "dnppv.pilepatternrecognizer\dnppv.pilepatternrecognizer.csproj", "{68222253-ECEA-41AE-A3D8-126489A26B0A}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9AE8C5E8-1E22-4BA1-B68A-F34BE396CBC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AE8C5E8-1E22-4BA1-B68A-F34BE396CBC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AE8C5E8-1E22-4BA1-B68A-F34BE396CBC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AE8C5E8-1E22-4BA1-B68A-F34BE396CBC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E90D9B1-FA65-467E-9F54-55BE68987427}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E90D9B1-FA65-467E-9F54-55BE68987427}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E90D9B1-FA65-467E-9F54-55BE68987427}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E90D9B1-FA65-467E-9F54-55BE68987427}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31A4BC12-A1E3-4182-81CB-0F49B88C3CC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31A4BC12-A1E3-4182-81CB-0F49B88C3CC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31A4BC12-A1E3-4182-81CB-0F49B88C3CC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31A4BC12-A1E3-4182-81CB-0F49B88C3CC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68222253-ECEA-41AE-A3D8-126489A26B0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68222253-ECEA-41AE-A3D8-126489A26B0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68222253-ECEA-41AE-A3D8-126489A26B0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68222253-ECEA-41AE-A3D8-126489A26B0A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9AE8C5E8-1E22-4BA1-B68A-F34BE396CBC5} = {430F88E1-1589-4250-8C95-3A8BBEA472DE}
+		{7E90D9B1-FA65-467E-9F54-55BE68987427} = {430F88E1-1589-4250-8C95-3A8BBEA472DE}
+		{31A4BC12-A1E3-4182-81CB-0F49B88C3CC5} = {430F88E1-1589-4250-8C95-3A8BBEA472DE}
+		{68222253-ECEA-41AE-A3D8-126489A26B0A} = {8A240010-AC82-403A-BFBE-3CB943333275}
 	EndGlobalSection
 EndGlobal
