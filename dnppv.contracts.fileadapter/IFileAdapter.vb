@@ -5,7 +5,7 @@ Public Interface IFileAdapter
     Sub Close()
 
     Function Read() As Boolean
-    Property CurrentSignal() As String
+    ReadOnly Property CurrentSignal() As String
 
-    Property Length() As Integer
+    ReadOnly Property Length() As Integer
 End Interface
