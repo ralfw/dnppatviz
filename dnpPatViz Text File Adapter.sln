@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dnppv.textfileadapter", "dnppv.textfileadapter\dnppv.textfileadapter.csproj", "{494E8000-718A-4838-80AE-612D8020364D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test.blackbox.textfileadapter", "test.blackbox.textfileadapter\test.blackbox.textfileadapter.csproj", "{295E83A8-B100-47E8-9D3B-728CBCD9F8B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{494E8000-718A-4838-80AE-612D8020364D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{494E8000-718A-4838-80AE-612D8020364D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{494E8000-718A-4838-80AE-612D8020364D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{494E8000-718A-4838-80AE-612D8020364D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{295E83A8-B100-47E8-9D3B-728CBCD9F8B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{295E83A8-B100-47E8-9D3B-728CBCD9F8B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{295E83A8-B100-47E8-9D3B-728CBCD9F8B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{295E83A8-B100-47E8-9D3B-728CBCD9F8B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

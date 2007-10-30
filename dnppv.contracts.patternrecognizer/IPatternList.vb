@@ -3,7 +3,7 @@ Public Interface IPatternList
 
     ReadOnly Property SignalCount() As Integer
     ReadOnly Property Count() As Integer
-    ReadOnly Property IPattern(ByVal index As Integer) As IPattern
+    Default ReadOnly Property Pattern(ByVal index As Integer) As IPattern
 End Interface
 
 Public Interface IPattern
@@ -11,7 +11,7 @@ Public Interface IPattern
 
     ReadOnly Property Size() As Integer
     ReadOnly Property Count() As Integer
-    ReadOnly Property IPattern(ByVal index As Integer) As IPatternOccurrence
+    Default ReadOnly Property Occurrence(ByVal index As Integer) As IPatternOccurrence
 End Interface
 
 Public Interface IPatternOccurrence

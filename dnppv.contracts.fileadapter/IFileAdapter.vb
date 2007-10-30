@@ -8,4 +8,5 @@ Public Interface IFileAdapter
     ReadOnly Property CurrentSignal() As String
 
     ReadOnly Property Length() As Integer
+    ReadOnly Property Filename() As String
 End Interface
