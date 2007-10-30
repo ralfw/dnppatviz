@@ -28,8 +28,8 @@ namespace dnppv.pile
 
         public TTerminalValue Create(string key, out bool isNew)
         {
-            lock (this.terminalValues)
-            {
+            //lock (this.terminalValues)
+            //{
                 TTerminalValue tv;
                 isNew = !this.terminalValues.TryGetValue(key, out tv);
                 if (isNew)
@@ -39,7 +39,7 @@ namespace dnppv.pile
                     this.terminalValues.Add(key, tv);
                 }
                 return tv;
-            }
+            //}
         }
 
 
@@ -61,8 +61,8 @@ namespace dnppv.pile
         {
             string parentKey = this.ParentIdsToString(nParent, aParent);
 
-            lock (this.innerRelations)
-            {
+            //lock (this.innerRelations)
+            //{
                 TRelation child = this.Get(parentKey);
                 isNew = child == null;
 
@@ -75,7 +75,7 @@ namespace dnppv.pile
                 }
 
                 return child;
-            }
+            //}
         }
         #endregion
 
@@ -90,13 +90,13 @@ namespace dnppv.pile
         {
             TRelation child;
 
-            lock (this.innerRelations)
-            {
+            //lock (this.innerRelations)
+            //{
                 if (this.innerRelations.TryGetValue(parentKey, out child))
                     return child;
                 else
                     return null;
-            }
+            //}
         }
 
 
