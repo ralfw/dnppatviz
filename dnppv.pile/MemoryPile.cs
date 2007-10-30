@@ -61,7 +61,6 @@ namespace dnppv.pile
         {
             //lock (this.innerRelations)
             //{
-                //TRelation child = this.Get(parentKey);
                 TRelation child = this.Get(nParent, aParent);
                 isNew = child == null;
 

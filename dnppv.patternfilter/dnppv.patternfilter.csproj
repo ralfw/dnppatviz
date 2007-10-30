@@ -4,11 +4,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C5E70ADA-A726-43FF-9CF2-5C812A9F1790}</ProjectGuid>
+    <ProjectGuid>{76C41E8F-E7AB-4FD5-998D-E4DD61AE397B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>dnppv.pile</RootNamespace>
-    <AssemblyName>dnppv.pile</AssemblyName>
+    <RootNamespace>dnppv.patternfilter</RootNamespace>
+    <AssemblyName>dnppv.patternfilter</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,16 +28,29 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="dnppv.contracts.fileadapter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\dnppv.contracts.fileadapter.dll</HintPath>
+    </Reference>
+    <Reference Include="dnppv.contracts.patternfilter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\dnppv.contracts.patternfilter.dll</HintPath>
+    </Reference>
+    <Reference Include="dnppv.contracts.patternrecognizer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\dnppv.contracts.patternrecognizer.dll</HintPath>
+    </Reference>
+    <Reference Include="ralfw.Microkernel, Version=1.0.7.0, Culture=neutral, PublicKeyToken=cd710b926737c92c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\ralfw.Microkernel.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Relations\InnerRelation.cs" />
-    <Compile Include="MemoryPile.cs" />
+    <Compile Include="PatternFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Relations\RelationBase.cs" />
-    <Compile Include="Relations\TerminalValueBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
