@@ -1,0 +1,14 @@
+bin\Debug\test1.txt
+bin\Debug\test.blackbox.textfileadapter.dll
+bin\Debug\test.blackbox.textfileadapter.pdb
+bin\Debug\dnppv.contracts.fileadapter.dll
+bin\Debug\dnppv.textfileadapter.dll
+bin\Debug\nunit.core.dll
+bin\Debug\nunit.framework.dll
+bin\Debug\dnppv.contracts.fileadapter.pdb
+bin\Debug\dnppv.contracts.fileadapter.xml
+bin\Debug\dnppv.textfileadapter.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\test.blackbox.textfileadapter.dll
+obj\Debug\test.blackbox.textfileadapter.pdb
+bin\Debug\testLeer.txt

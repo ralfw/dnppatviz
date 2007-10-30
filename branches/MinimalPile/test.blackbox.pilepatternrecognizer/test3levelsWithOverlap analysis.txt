@@ -1,0 +1,21 @@
+		          1         2
+		0123456789012345678901234
+		abcd0ab1cd2abcd3cdef4cdef
+size=2
+ab		x-   x-    x-
+bc       x-         x-
+cd        x-    x-   x- x-   x-
+de                       x-   x-
+ef                        x-   x-
+
+size=3
+abc     x--        x--
+bcd      x--        x--
+cde                     x--  x--
+def                      x--  x--
+
+size=4
+abcd    x---       x---
+cdef                    x--- x---
+
+

@@ -1,0 +1,13 @@
+bin\Debug\dnppv.pilepatternrecognizer.dll
+bin\Debug\dnppv.pilepatternrecognizer.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\dnppv.pilepatternrecognizer.dll
+obj\Debug\dnppv.pilepatternrecognizer.pdb
+bin\Debug\dnppv.contracts.fileadapter.dll
+bin\Debug\dnppv.contracts.patternrecognizer.dll
+bin\Debug\dnppv.contracts.patternrecognizer.pdb
+bin\Debug\dnppv.contracts.patternrecognizer.xml
+bin\Debug\dnppv.contracts.fileadapter.pdb
+bin\Debug\dnppv.contracts.fileadapter.xml
+..\bin\dnppv.pilepatternrecognizer.dll
+..\bin\dnppv.pilepatternrecognizer.pdb
