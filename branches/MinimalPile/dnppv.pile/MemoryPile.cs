@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Text;
 
 namespace dnppv.pile
@@ -9,13 +10,12 @@ namespace dnppv.pile
         where TRelation : InnerRelationBase, new()
     {
         private Dictionary<string, TTerminalValue> terminalValues;
-        private Dictionary<string, TRelation> innerRelations;
-
+        private Hashtable innerRelations;
 
         public MemoryPile()
         {
             this.terminalValues = new Dictionary<string, TTerminalValue>();
-            this.innerRelations = new Dictionary<string, TRelation>();
+            this.innerRelations = new Hashtable();
         }
 
 
@@ -59,11 +59,10 @@ namespace dnppv.pile
 
         public TRelation Create(RelationBase nParent, RelationBase aParent, out bool isNew)
         {
-            string parentKey = this.ParentIdsToString(nParent, aParent);
-
             //lock (this.innerRelations)
             //{
-                TRelation child = this.Get(parentKey);
+                //TRelation child = this.Get(parentKey);
+                TRelation child = this.Get(nParent, aParent);
                 isNew = child == null;
 
                 if (isNew)
@@ -71,7 +70,15 @@ namespace dnppv.pile
                     child = new TRelation();
                     child.Initialize(nParent, aParent);
 
-                    this.innerRelations.Add(parentKey, child);
+                    Hashtable assocRelations;
+                    if (this.innerRelations.ContainsKey(nParent.Id))
+                        assocRelations = (Hashtable)this.innerRelations[nParent.Id];
+                    else
+                    {
+                        assocRelations = new Hashtable();
+                        this.innerRelations.Add(nParent.Id, assocRelations);
+                    }
+                    assocRelations.Add(aParent.Id, child);
                 }
 
                 return child;
@@ -83,32 +90,21 @@ namespace dnppv.pile
         #region Get relation
         public TRelation Get(RelationBase nParent, RelationBase aParent)
         {
-            return Get(ParentIdsToString(nParent, aParent));
-        }
-
-        private TRelation Get(string parentKey)
-        {
-            TRelation child;
-
-            //lock (this.innerRelations)
-            //{
-                if (this.innerRelations.TryGetValue(parentKey, out child))
-                    return child;
-                else
-                    return null;
-            //}
+            TRelation child = null;
+            Hashtable assocRelations;
+            if (this.innerRelations.ContainsKey(nParent.Id))
+            {
+                assocRelations = (Hashtable)this.innerRelations[nParent.Id];
+                if (assocRelations.ContainsKey(aParent.Id))
+                    child = (TRelation)assocRelations[aParent.Id];
+            }
+            return child;            
         }
 
 
         public int CountInnerRelation
         {
             get { return this.innerRelations.Count; }
-        }
-
-
-        private string ParentIdsToString(RelationBase nParent, RelationBase aParent)
-        {
-            return string.Format("({0},{1})", nParent.Id, aParent.Id);
         }
         #endregion
     }

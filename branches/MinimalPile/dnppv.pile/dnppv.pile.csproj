@@ -33,6 +33,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Copy %282%29 of MemoryPile.cs" />
+    <Compile Include="Copy of MemoryPile.cs" />
     <Compile Include="Relations\InnerRelation.cs" />
     <Compile Include="MemoryPile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -145,34 +145,19 @@ namespace dnppv.pilepatternrecognizer
                     relationPairs.Add(o, new RelationItem(o, p));
             this.ts.TraceEvent(TraceEventType.Verbose, 320, "# of relation pairs: {0}, time elapsed: {1}", relationPairs.Count, DateTime.Now.Subtract(this.processingStarted)); this.ts.Flush();
 
-            // remove groups of adjacent pattern relations to short for the layer in under word
-            // layer 0: roots/signals (single relations) = no removals
-            // layer 1: pairs of roots (relations representing 2 relations) = remove groups of <1 relations, i.e. remove no relations
-            // layer 2: relations representing 3 relations = remove groups of <2 relations
-            // layer n: remote groups of <n relations
-            int iPatternGroupStart = 0;
+            // remove single relations, not adjacent to others
+            bool wasAdjacent = true;
             List<int> keys = new List<int>(relationPairs.Keys);
             for(int i=0; i<keys.Count; i++)
             {
                 int k = keys[i];
-                // check, if the current pattern is adjacent to the previous and thus belongs to the same pattern group...
-                if (i > 0 && keys[i-1] < k-1)
-                {
-                    // no, the current pattern is not adjacent to the previous.
-                    // check, if pattern group is too short for pattern layer...
-                    if ((i-iPatternGroupStart) < layerIndex)
-                        // yes, group too short: delete group members from future layer
-                        for(int j=iPatternGroupStart; j<i; j++)
-                            relationPairs.Remove(keys[j]);
-                    // start new pattern group with current pattern
-                    iPatternGroupStart = i;
-                }
+                bool isAdjacent = i > 0 && keys[i - 1] == k - 1;
+                if (!wasAdjacent && !isAdjacent)
+                        relationPairs.Remove(keys[i - 1]);
+                wasAdjacent = isAdjacent;
             }
-            // check, if pattern group is too short for pattern layer...
-            if ((keys.Count - iPatternGroupStart) < layerIndex)
-                // yes, group too short: delete group members from future layer
-                for (int j = iPatternGroupStart; j < keys.Count; j++)
-                    relationPairs.Remove(keys[j]);
+            if (!wasAdjacent)
+                relationPairs.Remove(keys[keys.Count - 1]);
             this.ts.TraceEvent(TraceEventType.Verbose, 320, "# of relation pairs final: {0}, time elapsed: {1}", relationPairs.Count, DateTime.Now.Subtract(this.processingStarted)); this.ts.Flush();
 
             return relationPairs;
