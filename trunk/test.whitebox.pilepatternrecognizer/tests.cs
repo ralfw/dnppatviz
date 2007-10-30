@@ -37,7 +37,7 @@ namespace test.whitebox.pilepatternrecognizer
         }
 
         [Test]
-        public void testCombineRelations()
+        public void testPairRelations()
         {
             PilePatternRecognizer r = new PilePatternRecognizer();
             
@@ -67,11 +67,11 @@ namespace test.whitebox.pilepatternrecognizer
 
                 patternsInLayer = new Dictionary<long, Pair>();
                 relations = r.PairRelations(signals, pile, patternsInLayer, 1);
-                Assert.AreEqual(2, relations.Count);
-
-                patternsInLayer = new Dictionary<long, Pair>();
-                relations = r.PairRelations(relations, pile, patternsInLayer, 2);
                 Assert.AreEqual(0, relations.Count);
+
+                //patternsInLayer = new Dictionary<long, Pair>();
+                //relations = r.PairRelations(relations, pile, patternsInLayer, 2);
+                //Assert.AreEqual(0, relations.Count);
             }
 
             using (TextFileAdapter file = new TextFileAdapter(@"..\..\test1b.txt"))
@@ -143,7 +143,7 @@ namespace test.whitebox.pilepatternrecognizer
 
                 patternsInLayer = new Dictionary<long, Pair>();
                 relations = r.PairRelations(signals, pile, patternsInLayer, 1);
-                Assert.AreEqual(5, relations.Count);
+                Assert.AreEqual(2, relations.Count);
                 Assert.AreEqual(2, patternsInLayer.Count);
 
                 patternsInLayer = new Dictionary<long, Pair>();
@@ -160,11 +160,33 @@ namespace test.whitebox.pilepatternrecognizer
 
                 patternsInLayer = new Dictionary<long, Pair>();
                 relations = r.PairRelations(signals, pile, patternsInLayer, 1);
-                Assert.AreEqual(6, relations.Count);
+                Assert.AreEqual(4, relations.Count);
                 Assert.AreEqual(2, patternsInLayer.Count);
 
                 patternsInLayer = new Dictionary<long, Pair>();
                 relations = r.PairRelations(relations, pile, patternsInLayer, 2);
+                Assert.AreEqual(0, relations.Count);
+                Assert.AreEqual(1, patternsInLayer.Count);
+            }
+
+            pile = new MemoryPile<Signal, Pair>();
+            using (TextFileAdapter file = new TextFileAdapter(@"..\..\test4.txt"))
+            {
+                signals = r.ConvertSignalsToTerminalValues(file, pile);
+                Assert.AreEqual(38, signals.Count);
+
+                patternsInLayer = new Dictionary<long, Pair>();
+                relations = r.PairRelations(signals, pile, patternsInLayer, 1);
+                Assert.AreEqual(18, relations.Count);
+                Assert.AreEqual(6, patternsInLayer.Count);
+
+                patternsInLayer = new Dictionary<long, Pair>();
+                relations = r.PairRelations(relations, pile, patternsInLayer, 2);
+                Assert.AreEqual(8, relations.Count);
+                Assert.AreEqual(3, patternsInLayer.Count);
+
+                patternsInLayer = new Dictionary<long, Pair>();
+                relations = r.PairRelations(relations, pile, patternsInLayer, 3);
                 Assert.AreEqual(0, relations.Count);
                 Assert.AreEqual(1, patternsInLayer.Count);
             }

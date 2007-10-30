@@ -14,10 +14,10 @@ namespace dnppv.pile
         internal void Initialize(RelationBase nParent, RelationBase aParent)
         {
             this.nParent = nParent;
-            this.nParent.AddChild(this, true);
+            //this.nParent.AddChild(this, true);
 
             this.aParent = aParent;
-            this.aParent.AddChild(this, false);
+            //this.aParent.AddChild(this, false);
         }
 
 

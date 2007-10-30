@@ -87,41 +87,41 @@ namespace test.blackbox.pile
         }
 
 
-        [Test]
-        public void testChildren()
-        {
-            MemoryPile<TerminalValueBase, InnerRelationBase> p;
-            p = new MemoryPile<TerminalValueBase, InnerRelationBase>();
+        //[Test]
+        //public void testChildren()
+        //{
+        //    MemoryPile<TerminalValueBase, InnerRelationBase> p;
+        //    p = new MemoryPile<TerminalValueBase, InnerRelationBase>();
 
-            TerminalValueBase tv1, tv2;
-            InnerRelationBase ir;
+        //    TerminalValueBase tv1, tv2;
+        //    InnerRelationBase ir;
 
-            tv1 = p.Create("a");
-            Assert.AreEqual(0, tv1.NormChildren.Length);
-            Assert.AreEqual(0, tv1.AssocChildren.Length);
+        //    tv1 = p.Create("a");
+        //    Assert.AreEqual(0, tv1.NormChildren.Length);
+        //    Assert.AreEqual(0, tv1.AssocChildren.Length);
 
-            tv2 = p.Create("b");
-            Assert.AreEqual(0, tv2.NormChildren.Length);
-            Assert.AreEqual(0, tv2.AssocChildren.Length);
+        //    tv2 = p.Create("b");
+        //    Assert.AreEqual(0, tv2.NormChildren.Length);
+        //    Assert.AreEqual(0, tv2.AssocChildren.Length);
 
-            ir = p.Create(tv1, tv2);
-            Assert.AreEqual(0, ir.NormChildren.Length);
-            Assert.AreEqual(0, ir.AssocChildren.Length);
-            Assert.AreEqual(1, tv1.NormChildren.Length);
-            Assert.AreEqual(0, tv1.AssocChildren.Length);
-            Assert.AreEqual(0, tv2.NormChildren.Length);
-            Assert.AreEqual(1, tv2.AssocChildren.Length);
+        //    ir = p.Create(tv1, tv2);
+        //    Assert.AreEqual(0, ir.NormChildren.Length);
+        //    Assert.AreEqual(0, ir.AssocChildren.Length);
+        //    Assert.AreEqual(1, tv1.NormChildren.Length);
+        //    Assert.AreEqual(0, tv1.AssocChildren.Length);
+        //    Assert.AreEqual(0, tv2.NormChildren.Length);
+        //    Assert.AreEqual(1, tv2.AssocChildren.Length);
 
-            ir = p.Create(tv1, tv2);
-            Assert.AreEqual(1, tv1.NormChildren.Length);
-            Assert.AreEqual(1, tv2.AssocChildren.Length);
+        //    ir = p.Create(tv1, tv2);
+        //    Assert.AreEqual(1, tv1.NormChildren.Length);
+        //    Assert.AreEqual(1, tv2.AssocChildren.Length);
 
-            p.Create(tv1, ir);
-            Assert.AreEqual(2, tv1.NormChildren.Length);
-            Assert.AreEqual(0, tv1.AssocChildren.Length);
-            Assert.AreEqual(0, ir.NormChildren.Length);
-            Assert.AreEqual(1, ir.AssocChildren.Length);
-        }
+        //    p.Create(tv1, ir);
+        //    Assert.AreEqual(2, tv1.NormChildren.Length);
+        //    Assert.AreEqual(0, tv1.AssocChildren.Length);
+        //    Assert.AreEqual(0, ir.NormChildren.Length);
+        //    Assert.AreEqual(1, ir.AssocChildren.Length);
+        //}
 
 
         [Test]
