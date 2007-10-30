@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Copy of PilePatternRecognizer.cs" />
     <Compile Include="Pattern list object model\PatternList.cs" />
     <Compile Include="Pattern list object model\Pattern.cs" />
     <Compile Include="Pattern list object model\PatternOccurrence.cs" />

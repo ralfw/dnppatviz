@@ -117,9 +117,10 @@ namespace dnppv.pilepatternrecognizer
 
                 if (prevRelItem != null)
                 {
-                    // check, if the current rel is adjacent to the prev rel
+                    // check, if the current rel is adjacent to the prev rel...
                     if (prevRelItem.Index == relItem.Index - 1)
                     {
+                        // yes, then combine both into a new rel for the next layer
                         bool isNew;
                         Pair newRel = pile.Create(prevRelItem.Relation, relItem.Relation, out isNew);
                         newRel.AddOccurrence(i - 1);
@@ -129,6 +130,7 @@ namespace dnppv.pilepatternrecognizer
                                 patternsInLayer.Add(newRel.Id, newRel);
                     }
                 }
+
                 prevRelItem = relItem;
             }
             this.ts.TraceEvent(TraceEventType.Verbose, 310, "# of patterns collected: {0}, time elapsed: {1}", patternsInLayer.Count, DateTime.Now.Subtract(this.processingStarted)); this.ts.Flush();
@@ -143,50 +145,19 @@ namespace dnppv.pilepatternrecognizer
                     relationPairs.Add(o, new RelationItem(o, p));
             this.ts.TraceEvent(TraceEventType.Verbose, 320, "# of relation pairs: {0}, time elapsed: {1}", relationPairs.Count, DateTime.Now.Subtract(this.processingStarted)); this.ts.Flush();
 
-            // remove groups of adjacent pattern relations to short for the layer in under word
-            // layer 0: roots/signals (single relations) = no removals
-            // layer 1: pairs of roots (relations representing 2 relations) = remove groups of <1 relations, i.e. remove no relations
-            // layer 2: relations representing 3 relations = remove groups of <2 relations
-            // layer n: remote groups of <n relations
-            List<RelationItem> patternGroup = null;
+            // remove single relations, not adjacent to others
+            bool wasAdjacent = true;
             List<int> keys = new List<int>(relationPairs.Keys);
-            foreach (int i in keys)
+            for(int i=0; i<keys.Count; i++)
             {
-                if (patternGroup == null)
-                {
-                    patternGroup = new List<RelationItem>();
-                    patternGroup.Add(relationPairs[i]);
-                }
-                else
-                {
-                    RelationItem groupTailPattern = patternGroup[patternGroup.Count - 1];
-                    RelationItem currentPattern = relationPairs[i];
-
-                    if (groupTailPattern.Index == currentPattern.Index - 1)
-                        patternGroup.Add(currentPattern); // add pattern to group since it´s adjacent to previous pattern
-                    else
-                    {
-                        // check, if pattern group is too short for pattern layer...
-                        if (patternGroup.Count < layerIndex)
-                        {
-                            // yes, group too short: delete group members from future layer
-                            foreach (RelationItem patternItem in patternGroup)
-                                relationPairs.Remove(patternItem.Index);
-                        }
-
-                        // start new pattern group with current pattern
-                        patternGroup = new List<RelationItem>();
-                        patternGroup.Add(currentPattern);
-                    }
-                }
+                int k = keys[i];
+                bool isAdjacent = i > 0 && keys[i - 1] == k - 1;
+                if (!wasAdjacent && !isAdjacent)
+                        relationPairs.Remove(keys[i - 1]);
+                wasAdjacent = isAdjacent;
             }
-            // check, if pattern group is too short for pattern layer...
-            if (patternGroup != null && patternGroup.Count < layerIndex)
-            {
-                // yes, group too short: delete group members from future layer
-                foreach (RelationItem patternItem in patternGroup)
-                    relationPairs.Remove(patternItem.Index);
-            }
+            if (!wasAdjacent)
+                relationPairs.Remove(keys[keys.Count - 1]);
             this.ts.TraceEvent(TraceEventType.Verbose, 320, "# of relation pairs final: {0}, time elapsed: {1}", relationPairs.Count, DateTime.Now.Subtract(this.processingStarted)); this.ts.Flush();
 
             return relationPairs;
