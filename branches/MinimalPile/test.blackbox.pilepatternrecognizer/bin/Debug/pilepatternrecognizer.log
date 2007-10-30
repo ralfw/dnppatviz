@@ -1,0 +1,154 @@
+PilePatternRecognizer Start: 10 : PilePatternRecognizer.DetectPatterns started on <mum1+2.txt>
+PilePatternRecognizer Information: 20 : # of signals received: 5746, time elapsed: 00:00:00.2968750
+PilePatternRecognizer Start: 200 : FindPatterns started
+PilePatternRecognizer Information: 210 : Relational layer: 0, # of relations: 5746
+PilePatternRecognizer Verbose: 300 : PairRelations started @ 00:00:00.8125000
+PilePatternRecognizer Verbose: 310 : # of patterns collected: 446, time elapsed: 00:00:01.4375000
+PilePatternRecognizer Verbose: 320 : # of relation pairs: 5602, time elapsed: 00:00:01.6250000
+PilePatternRecognizer Verbose: 320 : # of relation pairs final: 5602, time elapsed: 00:00:01.7500000
+PilePatternRecognizer Information: 220 : # of patterns in layer: 446, time elapsed: 00:00:01.7500000
+PilePatternRecognizer Information: 210 : Relational layer: 1, # of relations: 5602
+PilePatternRecognizer Verbose: 300 : PairRelations started @ 00:00:01.7500000
+PilePatternRecognizer Verbose: 310 : # of patterns collected: 892, time elapsed: 00:00:02.3281250
+PilePatternRecognizer Verbose: 320 : # of relation pairs: 4920, time elapsed: 00:00:02.5000000
+PilePatternRecognizer Verbose: 320 : # of relation pairs final: 4850, time elapsed: 00:00:02.6093750
+PilePatternRecognizer Information: 220 : # of patterns in layer: 892, time elapsed: 00:00:02.6093750
+PilePatternRecognizer Information: 210 : Relational layer: 2, # of relations: 4850
+PilePatternRecognizer Verbose: 300 : PairRelations started @ 00:00:02.6093750
+PilePatternRecognizer Verbose: 310 : # of patterns collected: 948, time elapsed: 00:00:03.1718750
+PilePatternRecognizer Verbose: 320 : # of relation pairs: 3813, time elapsed: 00:00:03.2968750
+PilePatternRecognizer Verbose: 320 : # of relation pairs final: 3429, time elapsed: 00:00:03.3906250
+PilePatternRecognizer Information: 220 : # of patterns in layer: 948, time elapsed: 00:00:03.3906250
+PilePatternRecognizer Information: 210 : Relational layer: 3, # of relations: 3429
+PilePatternRecognizer Verbose: 300 : PairRelations started @ 00:00:03.3906250
+PilePatternRecognizer Verbose: 310 : # of patterns collected: 773, time elapsed: 00:00:03.7343750
+PilePatternRecognizer Verbose: 320 : # of relation pairs: 2741, time elapsed: 00:00:03.8281250
+PilePatternRecognizer Verbose: 320 : # of relation pairs final: 2158, time elapsed: 00:00:03.9062500
+PilePatternRecognizer Information: 220 : # of patterns in layer: 773, time elapsed: 00:00:03.9062500
+PilePatternRecognizer Information: 210 : Relational layer: 4, # of relations: 2158
+PilePatternRecognizer Verbose: 300 : PairRelations started @ 00:00:03.9062500
+PilePatternRecognizer Verbose: 310 : # of patterns collected: 530, time elapsed: 00:00:04.1093750
+PilePatternRecognizer Verbose: 320 : # of relation pairs: 1812, time elapsed: 00:00:04.1718750
+PilePatternRecognizer Verbose: 320 : # of relation pairs final: 1528, time elapsed: 00:00:04.2187500
+PilePatternRecognizer Information: 220 : # of patterns in layer: 530, time elapsed: 00:00:04.2187500
+PilePatternRecognizer Information: 210 : Relational layer: 5, # of relations: 1528
+PilePatternRecognizer Verbose: 300 : PairRelations started @ 00:00:04.2187500
+PilePatternRecognizer Verbose: 310 : # of patterns collected: 392, time elapsed: 00:00:04.3750000
+PilePatternRecognizer Verbose: 320 : # of relation pairs: 1356, time elapsed: 00:00:04.4218750
+PilePatternRecognizer Verbose: 320 : # of relation pairs final: 1207, time elapsed: 00:00:04.4531250
+PilePatternRecognizer Information: 220 : # of patterns in layer: 392, time elapsed: 00:00:04.4531250
+PilePatternRecognizer Information: 210 : Relational layer: 6, # of relations: 1207
+PilePatternRecognizer Verbose: 300 : PairRelations started @ 00:00:04.4531250
+PilePatternRecognizer Verbose: 310 : # of patterns collected: 308, time elapsed: 00:00:04.5625000
+PilePatternRecognizer Verbose: 320 : # of relation pairs: 1098, time elapsed: 00:00:04.6093750
+PilePatternRecognizer Verbose: 320 : # of relation pairs final: 944, time elapsed: 00:00:04.6406250
+PilePatternRecognizer Information: 220 : # of patterns in layer: 308, time elapsed: 00:00:04.6406250
+PilePatternRecognizer Information: 210 : Relational layer: 7, # of relations: 944
+PilePatternRecognizer Verbose: 300 : PairRelations started @ 00:00:04.6406250
+PilePatternRecognizer Verbose: 310 : # of patterns collected: 236, time elapsed: 00:00:04.7187500
+PilePatternRecognizer Verbose: 320 : # of relation pairs: 870, time elapsed: 00:00:04.7968750
+PilePatternRecognizer Verbose: 320 : # of relation pairs final: 778, time elapsed: 00:00:04.8281250
+PilePatternRecognizer Information: 220 : # of patterns in layer: 236, time elapsed: 00:00:04.8281250
+PilePatternRecognizer Information: 210 : Relational layer: 8, # of relations: 778
+PilePatternRecognizer Verbose: 300 : PairRelations started @ 00:00:04.8281250
+PilePatternRecognizer Verbose: 310 : # of patterns collected: 195, time elapsed: 00:00:04.9062500
+PilePatternRecognizer Verbose: 320 : # of relation pairs: 729, time elapsed: 00:00:04.9218750
+PilePatternRecognizer Verbose: 320 : # of relation pairs final: 685, time elapsed: 00:00:04.9375000
+PilePatternRecognizer Information: 220 : # of patterns in layer: 195, time elapsed: 00:00:04.9375000
+PilePatternRecognizer Information: 210 : Relational layer: 9, # of relations: 685
+PilePatternRecognizer Verbose: 300 : PairRelations started @ 00:00:04.9375000
+PilePatternRecognizer Verbose: 310 : # of patterns collected: 178, time elapsed: 00:00:05.0156250
+PilePatternRecognizer Verbose: 320 : # of relation pairs: 640, time elapsed: 00:00:05.0312500
+PilePatternRecognizer Verbose: 320 : # of relation pairs final: 613, time elapsed: 00:00:05.0468750
+PilePatternRecognizer Information: 220 : # of patterns in layer: 178, time elapsed: 00:00:05.0468750
+PilePatternRecognizer Information: 210 : Relational layer: 10, # of relations: 613
+PilePatternRecognizer Verbose: 300 : PairRelations started @ 00:00:05.0468750
+PilePatternRecognizer Verbose: 310 : # of patterns collected: 160, time elapsed: 00:00:05.1093750
+PilePatternRecognizer Verbose: 320 : # of relation pairs: 571, time elapsed: 00:00:05.1250000
+PilePatternRecognizer Verbose: 320 : # of relation pairs final: 460, time elapsed: 00:00:05.1406250
+PilePatternRecognizer Information: 220 : # of patterns in layer: 160, time elapsed: 00:00:05.1406250
+PilePatternRecognizer Information: 210 : Relational layer: 11, # of relations: 460
+PilePatternRecognizer Verbose: 300 : PairRelations started @ 00:00:05.1406250
+PilePatternRecognizer Verbose: 310 : # of patterns collected: 125, time elapsed: 00:00:05.1875000
+PilePatternRecognizer Verbose: 320 : # of relation pairs: 429, time elapsed: 00:00:05.2187500
+PilePatternRecognizer Verbose: 320 : # of relation pairs final: 326, time elapsed: 00:00:05.2343750
+PilePatternRecognizer Information: 220 : # of patterns in layer: 125, time elapsed: 00:00:05.2343750
+PilePatternRecognizer Information: 210 : Relational layer: 12, # of relations: 326
+PilePatternRecognizer Verbose: 300 : PairRelations started @ 00:00:05.2343750
+PilePatternRecognizer Verbose: 310 : # of patterns collected: 92, time elapsed: 00:00:05.2812500
+PilePatternRecognizer Verbose: 320 : # of relation pairs: 298, time elapsed: 00:00:05.2968750
+PilePatternRecognizer Verbose: 320 : # of relation pairs final: 208, time elapsed: 00:00:05.3125000
+PilePatternRecognizer Information: 220 : # of patterns in layer: 92, time elapsed: 00:00:05.3125000
+PilePatternRecognizer Information: 210 : Relational layer: 13, # of relations: 208
+PilePatternRecognizer Verbose: 300 : PairRelations started @ 00:00:05.3125000
+PilePatternRecognizer Verbose: 310 : # of patterns collected: 71, time elapsed: 00:00:05.3281250
+PilePatternRecognizer Verbose: 320 : # of relation pairs: 196, time elapsed: 00:00:05.3281250
+PilePatternRecognizer Verbose: 320 : # of relation pairs final: 170, time elapsed: 00:00:05.3437500
+PilePatternRecognizer Information: 220 : # of patterns in layer: 71, time elapsed: 00:00:05.3437500
+PilePatternRecognizer Information: 210 : Relational layer: 14, # of relations: 170
+PilePatternRecognizer Verbose: 300 : PairRelations started @ 00:00:05.3437500
+PilePatternRecognizer Verbose: 310 : # of patterns collected: 57, time elapsed: 00:00:05.3593750
+PilePatternRecognizer Verbose: 320 : # of relation pairs: 149, time elapsed: 00:00:05.3593750
+PilePatternRecognizer Verbose: 320 : # of relation pairs final: 97, time elapsed: 00:00:05.3750000
+PilePatternRecognizer Information: 220 : # of patterns in layer: 57, time elapsed: 00:00:05.3750000
+PilePatternRecognizer Information: 210 : Relational layer: 15, # of relations: 97
+PilePatternRecognizer Verbose: 300 : PairRelations started @ 00:00:05.3750000
+PilePatternRecognizer Verbose: 310 : # of patterns collected: 34, time elapsed: 00:00:05.3750000
+PilePatternRecognizer Verbose: 320 : # of relation pairs: 91, time elapsed: 00:00:05.3750000
+PilePatternRecognizer Verbose: 320 : # of relation pairs final: 91, time elapsed: 00:00:05.3750000
+PilePatternRecognizer Information: 220 : # of patterns in layer: 34, time elapsed: 00:00:05.3750000
+PilePatternRecognizer Information: 210 : Relational layer: 16, # of relations: 91
+PilePatternRecognizer Verbose: 300 : PairRelations started @ 00:00:05.3906250
+PilePatternRecognizer Verbose: 310 : # of patterns collected: 33, time elapsed: 00:00:05.3906250
+PilePatternRecognizer Verbose: 320 : # of relation pairs: 86, time elapsed: 00:00:05.3906250
+PilePatternRecognizer Verbose: 320 : # of relation pairs final: 70, time elapsed: 00:00:05.4062500
+PilePatternRecognizer Information: 220 : # of patterns in layer: 33, time elapsed: 00:00:05.4062500
+PilePatternRecognizer Information: 210 : Relational layer: 17, # of relations: 70
+PilePatternRecognizer Verbose: 300 : PairRelations started @ 00:00:05.4062500
+PilePatternRecognizer Verbose: 310 : # of patterns collected: 32, time elapsed: 00:00:05.4062500
+PilePatternRecognizer Verbose: 320 : # of relation pairs: 66, time elapsed: 00:00:05.4062500
+PilePatternRecognizer Verbose: 320 : # of relation pairs final: 0, time elapsed: 00:00:05.4062500
+PilePatternRecognizer Information: 220 : # of patterns in layer: 32, time elapsed: 00:00:05.4062500
+PilePatternRecognizer Stop: 290 : FindPatterns finished
+PilePatternRecognizer Information: 30 : # of pattern layers: 18, time elapsed: 00:00:05.4062500
+PilePatternRecognizer Start: 100 : BuildPatternList started
+PilePatternRecognizer Information: 110 : Pattern layer: 0
+PilePatternRecognizer Information: 120 : Running total # of patterns: 446
+PilePatternRecognizer Information: 110 : Pattern layer: 1
+PilePatternRecognizer Information: 120 : Running total # of patterns: 1338
+PilePatternRecognizer Information: 110 : Pattern layer: 2
+PilePatternRecognizer Information: 120 : Running total # of patterns: 2286
+PilePatternRecognizer Information: 110 : Pattern layer: 3
+PilePatternRecognizer Information: 120 : Running total # of patterns: 3059
+PilePatternRecognizer Information: 110 : Pattern layer: 4
+PilePatternRecognizer Information: 120 : Running total # of patterns: 3589
+PilePatternRecognizer Information: 110 : Pattern layer: 5
+PilePatternRecognizer Information: 120 : Running total # of patterns: 3981
+PilePatternRecognizer Information: 110 : Pattern layer: 6
+PilePatternRecognizer Information: 120 : Running total # of patterns: 4289
+PilePatternRecognizer Information: 110 : Pattern layer: 7
+PilePatternRecognizer Information: 120 : Running total # of patterns: 4525
+PilePatternRecognizer Information: 110 : Pattern layer: 8
+PilePatternRecognizer Information: 120 : Running total # of patterns: 4720
+PilePatternRecognizer Information: 110 : Pattern layer: 9
+PilePatternRecognizer Information: 120 : Running total # of patterns: 4898
+PilePatternRecognizer Information: 110 : Pattern layer: 10
+PilePatternRecognizer Information: 120 : Running total # of patterns: 5058
+PilePatternRecognizer Information: 110 : Pattern layer: 11
+PilePatternRecognizer Information: 120 : Running total # of patterns: 5183
+PilePatternRecognizer Information: 110 : Pattern layer: 12
+PilePatternRecognizer Information: 120 : Running total # of patterns: 5275
+PilePatternRecognizer Information: 110 : Pattern layer: 13
+PilePatternRecognizer Information: 120 : Running total # of patterns: 5346
+PilePatternRecognizer Information: 110 : Pattern layer: 14
+PilePatternRecognizer Information: 120 : Running total # of patterns: 5403
+PilePatternRecognizer Information: 110 : Pattern layer: 15
+PilePatternRecognizer Information: 120 : Running total # of patterns: 5437
+PilePatternRecognizer Information: 110 : Pattern layer: 16
+PilePatternRecognizer Information: 120 : Running total # of patterns: 5470
+PilePatternRecognizer Information: 110 : Pattern layer: 17
+PilePatternRecognizer Information: 120 : Running total # of patterns: 5502
+PilePatternRecognizer Stop: 190 : BuildPatternList finished
+PilePatternRecognizer Information: 40 : # of patterns found: 5502, time elapsed: 00:00:07
+PilePatternRecognizer Information: 45 : Pile stats: # of TVs: 74, # of inner rels: 7351
+PilePatternRecognizer Stop: 50 : PilePatternRecognizer.DetectPatterns finished

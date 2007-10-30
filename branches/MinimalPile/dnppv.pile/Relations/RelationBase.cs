@@ -17,15 +17,15 @@ namespace dnppv.pile
 
 
         private long id;
-        private List<RelationBase> nChildren, aChildren;
+//        private List<RelationBase> nChildren, aChildren;
 
 
         public RelationBase()
         {
             this.id = RelationBase.GenerateId();
 
-            this.nChildren = new List<RelationBase>();
-            this.aChildren = new List<RelationBase>();
+            //this.nChildren = new List<RelationBase>();
+            //this.aChildren = new List<RelationBase>();
         }
 
 
@@ -35,31 +35,31 @@ namespace dnppv.pile
         }
 
 
-        #region Children management
-        internal void AddChild(RelationBase child, bool isNormChild)
-        {
-            if (isNormChild)
-                lock (this.nChildren)
-                {
-                    this.nChildren.Add(child);
-                }
-            else
-                lock (this.aChildren)
-                {
-                    this.aChildren.Add(child);
-                }
-        }
+        //#region Children management
+        //internal void AddChild(RelationBase child, bool isNormChild)
+        //{
+        //    if (isNormChild)
+        //        lock (this.nChildren)
+        //        {
+        //            this.nChildren.Add(child);
+        //        }
+        //    else
+        //        lock (this.aChildren)
+        //        {
+        //            this.aChildren.Add(child);
+        //        }
+        //}
 
 
-        public RelationBase[] NormChildren
-        {
-            get { lock (this.nChildren) { return this.nChildren.ToArray(); } }
-        }
+        //public RelationBase[] NormChildren
+        //{
+        //    get { lock (this.nChildren) { return this.nChildren.ToArray(); } }
+        //}
 
-        public RelationBase[] AssocChildren
-        {
-            get { lock (this.aChildren) { return this.aChildren.ToArray(); } }
-        }
-        #endregion
+        //public RelationBase[] AssocChildren
+        //{
+        //    get { lock (this.aChildren) { return this.aChildren.ToArray(); } }
+        //}
+        //#endregion
     }
 }
