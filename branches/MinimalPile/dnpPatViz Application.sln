@@ -12,8 +12,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "dnppv.contracts.patternreco
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "dnppv.contracts.patternfilter", "dnppv.contracts.patternfilter\dnppv.contracts.patternfilter.vbproj", "{31A4BC12-A1E3-4182-81CB-0F49B88C3CC5}"
 	ProjectSection(ProjectDependencies) = postProject
-		{7E90D9B1-FA65-467E-9F54-55BE68987427} = {7E90D9B1-FA65-467E-9F54-55BE68987427}
 		{9AE8C5E8-1E22-4BA1-B68A-F34BE396CBC5} = {9AE8C5E8-1E22-4BA1-B68A-F34BE396CBC5}
+		{7E90D9B1-FA65-467E-9F54-55BE68987427} = {7E90D9B1-FA65-467E-9F54-55BE68987427}
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PilePatternRecognizer", "PilePatternRecognizer", "{8A240010-AC82-403A-BFBE-3CB943333275}"
@@ -24,17 +24,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DemoClient", "DemoClient", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TextFileAdapter", "TextFileAdapter", "{8AC1870E-35AC-43C9-B283-DDB30313831A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dnppv.pilepatternrecognizer", "dnppv.pilepatternrecognizer\dnppv.pilepatternrecognizer.csproj", "{68222253-ECEA-41AE-A3D8-126489A26B0A}"
-	ProjectSection(ProjectDependencies) = postProject
-		{7E90D9B1-FA65-467E-9F54-55BE68987427} = {7E90D9B1-FA65-467E-9F54-55BE68987427}
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dnppv.textfileadapter", "dnppv.textfileadapter\dnppv.textfileadapter.csproj", "{494E8000-718A-4838-80AE-612D8020364D}"
 	ProjectSection(ProjectDependencies) = postProject
 		{9AE8C5E8-1E22-4BA1-B68A-F34BE396CBC5} = {9AE8C5E8-1E22-4BA1-B68A-F34BE396CBC5}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test.blackbox.textfileadapter", "test.blackbox.textfileadapter\test.blackbox.textfileadapter.csproj", "{295E83A8-B100-47E8-9D3B-728CBCD9F8B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dnppv.pilepatternrecognizer", "dnppv.pilepatternrecognizer\dnppv.pilepatternrecognizer.csproj", "{68222253-ECEA-41AE-A3D8-126489A26B0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test.blackbox.pilepatternrecognizer", "test.blackbox.pilepatternrecognizer\test.blackbox.pilepatternrecognizer.csproj", "{E150ABB3-6BEB-4FA2-8037-BDFADDC9E617}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dnppv.patternfilter", "dnppv.patternfilter\dnppv.patternfilter.csproj", "{76C41E8F-E7AB-4FD5-998D-E4DD61AE397B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test.blackbox.patternfilter", "test.blackbox.patternfilter\test.blackbox.patternfilter.csproj", "{4AE5CD3A-94A0-47F1-AA1A-7E0CFB17F8FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dnppv.client.rel1", "dnppv.client.rel1\dnppv.client.rel1.csproj", "{1E1D7DD4-1256-4F63-B923-A5C95E1DAE64}"
+	ProjectSection(ProjectDependencies) = postProject
+		{76C41E8F-E7AB-4FD5-998D-E4DD61AE397B} = {76C41E8F-E7AB-4FD5-998D-E4DD61AE397B}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,10 +62,6 @@ Global
 		{31A4BC12-A1E3-4182-81CB-0F49B88C3CC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31A4BC12-A1E3-4182-81CB-0F49B88C3CC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31A4BC12-A1E3-4182-81CB-0F49B88C3CC5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{68222253-ECEA-41AE-A3D8-126489A26B0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{68222253-ECEA-41AE-A3D8-126489A26B0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{68222253-ECEA-41AE-A3D8-126489A26B0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{68222253-ECEA-41AE-A3D8-126489A26B0A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{494E8000-718A-4838-80AE-612D8020364D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{494E8000-718A-4838-80AE-612D8020364D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{494E8000-718A-4838-80AE-612D8020364D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -66,6 +70,26 @@ Global
 		{295E83A8-B100-47E8-9D3B-728CBCD9F8B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{295E83A8-B100-47E8-9D3B-728CBCD9F8B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{295E83A8-B100-47E8-9D3B-728CBCD9F8B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68222253-ECEA-41AE-A3D8-126489A26B0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68222253-ECEA-41AE-A3D8-126489A26B0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68222253-ECEA-41AE-A3D8-126489A26B0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68222253-ECEA-41AE-A3D8-126489A26B0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E150ABB3-6BEB-4FA2-8037-BDFADDC9E617}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E150ABB3-6BEB-4FA2-8037-BDFADDC9E617}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E150ABB3-6BEB-4FA2-8037-BDFADDC9E617}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E150ABB3-6BEB-4FA2-8037-BDFADDC9E617}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76C41E8F-E7AB-4FD5-998D-E4DD61AE397B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76C41E8F-E7AB-4FD5-998D-E4DD61AE397B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76C41E8F-E7AB-4FD5-998D-E4DD61AE397B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76C41E8F-E7AB-4FD5-998D-E4DD61AE397B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AE5CD3A-94A0-47F1-AA1A-7E0CFB17F8FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AE5CD3A-94A0-47F1-AA1A-7E0CFB17F8FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AE5CD3A-94A0-47F1-AA1A-7E0CFB17F8FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AE5CD3A-94A0-47F1-AA1A-7E0CFB17F8FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E1D7DD4-1256-4F63-B923-A5C95E1DAE64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E1D7DD4-1256-4F63-B923-A5C95E1DAE64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E1D7DD4-1256-4F63-B923-A5C95E1DAE64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E1D7DD4-1256-4F63-B923-A5C95E1DAE64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +99,10 @@ Global
 		{7E90D9B1-FA65-467E-9F54-55BE68987427} = {430F88E1-1589-4250-8C95-3A8BBEA472DE}
 		{31A4BC12-A1E3-4182-81CB-0F49B88C3CC5} = {430F88E1-1589-4250-8C95-3A8BBEA472DE}
 		{68222253-ECEA-41AE-A3D8-126489A26B0A} = {8A240010-AC82-403A-BFBE-3CB943333275}
+		{E150ABB3-6BEB-4FA2-8037-BDFADDC9E617} = {8A240010-AC82-403A-BFBE-3CB943333275}
+		{76C41E8F-E7AB-4FD5-998D-E4DD61AE397B} = {30C8E2E3-3ADD-4483-92BF-CBEC32134C4F}
+		{4AE5CD3A-94A0-47F1-AA1A-7E0CFB17F8FD} = {30C8E2E3-3ADD-4483-92BF-CBEC32134C4F}
+		{1E1D7DD4-1256-4F63-B923-A5C95E1DAE64} = {5313E63E-C016-4766-8C67-D37E1D1BC08C}
 		{494E8000-718A-4838-80AE-612D8020364D} = {8AC1870E-35AC-43C9-B283-DDB30313831A}
 		{295E83A8-B100-47E8-9D3B-728CBCD9F8B1} = {8AC1870E-35AC-43C9-B283-DDB30313831A}
 	EndGlobalSection
