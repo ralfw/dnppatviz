@@ -9,8 +9,17 @@ namespace dnppv.textfileadapter
 {
     public class TextFileAdapter : IFileAdapter
     {
+        string filename;
         StreamReader sr;
         char[] buffer;
+
+
+        public TextFileAdapter() { }
+
+        public TextFileAdapter(string filename)
+        {
+            this.Open(filename);
+        }
 
 
         #region IFileAdapter Members
@@ -19,6 +28,7 @@ namespace dnppv.textfileadapter
         {
             if (this.sr != null) this.sr.Close();
 
+            this.filename = filename;
             this.sr = new StreamReader(filename, Encoding.Default);
             this.buffer = new char[1];  // a buffer len of 1 might be slow - but it´s simple to start with
         }
@@ -62,6 +72,12 @@ namespace dnppv.textfileadapter
             {
                 return -1; // length of file is not necessarily equal to number of chars in file
             }
+        }
+
+
+        public string Filename
+        {
+            get { return this.filename; }
         }
         #endregion
 

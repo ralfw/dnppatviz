@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dnppv.pile", "dnppv.pile\dnppv.pile.csproj", "{C5E70ADA-A726-43FF-9CF2-5C812A9F1790}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test.blackbox.pile", "..\test.blackbox.pile\test.blackbox.pile.csproj", "{811657A1-8477-46F8-839D-68BC0BBB9063}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test.blackbox.pile", "test.blackbox.pile\test.blackbox.pile.csproj", "{811657A1-8477-46F8-839D-68BC0BBB9063}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

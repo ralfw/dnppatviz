@@ -63,7 +63,7 @@ namespace dnppv.pile
 
             lock (this.innerRelations)
             {
-                TRelation child = this.Get(nParent, aParent);
+                TRelation child = this.Get(parentKey);
                 isNew = child == null;
 
                 if (isNew)
@@ -83,7 +83,11 @@ namespace dnppv.pile
         #region Get relation
         public TRelation Get(RelationBase nParent, RelationBase aParent)
         {
-            string parentKey = ParentIdsToString(nParent, aParent);
+            return Get(ParentIdsToString(nParent, aParent));
+        }
+
+        private TRelation Get(string parentKey)
+        {
             TRelation child;
 
             lock (this.innerRelations)
@@ -94,6 +98,7 @@ namespace dnppv.pile
                     return null;
             }
         }
+
 
         public int CountInnerRelation
         {
