@@ -6,7 +6,7 @@ using dnppv.pile;
 
 namespace dnppv.pilepatternrecognizer
 {
-    internal class Signal : TerminalValueBase
+    internal class Signal : RootRelation
     {
     }
 }

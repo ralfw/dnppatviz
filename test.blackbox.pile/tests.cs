@@ -13,12 +13,12 @@ namespace test.blackbox.pile
         [Test]
         public void testCreateTV()
         {
-            MemoryPile<TerminalValueBase, InnerRelationBase> p;
-            p = new MemoryPile<TerminalValueBase, InnerRelationBase>();
+            MemoryPile<RootRelation, InnerRelation> p;
+            p = new MemoryPile<RootRelation, InnerRelation>();
 
             Assert.AreEqual(0, p.CountTV);
 
-            TerminalValueBase tv;
+            RootRelation tv;
             tv = p.Create("a");
             Assert.AreEqual(1, p.CountTV);
             Assert.AreEqual("a", tv.Key);
@@ -42,11 +42,11 @@ namespace test.blackbox.pile
         [Test]
         public void testCreate()
         {
-            MemoryPile<TerminalValueBase, InnerRelationBase> p;
-            p = new MemoryPile<TerminalValueBase, InnerRelationBase>();
+            MemoryPile<RootRelation, InnerRelation> p;
+            p = new MemoryPile<RootRelation, InnerRelation>();
 
-            TerminalValueBase tv1, tv2;
-            InnerRelationBase ir;
+            RootRelation tv1, tv2;
+            InnerRelation ir;
             bool isNew;
 
             tv1 = p.Create("a");
@@ -72,11 +72,11 @@ namespace test.blackbox.pile
         [Test]
         public void testParents()
         {
-            MemoryPile<TerminalValueBase, InnerRelationBase> p;
-            p = new MemoryPile<TerminalValueBase, InnerRelationBase>();
+            MemoryPile<RootRelation, InnerRelation> p;
+            p = new MemoryPile<RootRelation, InnerRelation>();
 
-            TerminalValueBase tv1, tv2;
-            InnerRelationBase ir;
+            RootRelation tv1, tv2;
+            InnerRelation ir;
 
             tv1 = p.Create("a");
             tv2 = p.Create("b");
@@ -87,51 +87,14 @@ namespace test.blackbox.pile
         }
 
 
-        //[Test]
-        //public void testChildren()
-        //{
-        //    MemoryPile<TerminalValueBase, InnerRelationBase> p;
-        //    p = new MemoryPile<TerminalValueBase, InnerRelationBase>();
-
-        //    TerminalValueBase tv1, tv2;
-        //    InnerRelationBase ir;
-
-        //    tv1 = p.Create("a");
-        //    Assert.AreEqual(0, tv1.NormChildren.Length);
-        //    Assert.AreEqual(0, tv1.AssocChildren.Length);
-
-        //    tv2 = p.Create("b");
-        //    Assert.AreEqual(0, tv2.NormChildren.Length);
-        //    Assert.AreEqual(0, tv2.AssocChildren.Length);
-
-        //    ir = p.Create(tv1, tv2);
-        //    Assert.AreEqual(0, ir.NormChildren.Length);
-        //    Assert.AreEqual(0, ir.AssocChildren.Length);
-        //    Assert.AreEqual(1, tv1.NormChildren.Length);
-        //    Assert.AreEqual(0, tv1.AssocChildren.Length);
-        //    Assert.AreEqual(0, tv2.NormChildren.Length);
-        //    Assert.AreEqual(1, tv2.AssocChildren.Length);
-
-        //    ir = p.Create(tv1, tv2);
-        //    Assert.AreEqual(1, tv1.NormChildren.Length);
-        //    Assert.AreEqual(1, tv2.AssocChildren.Length);
-
-        //    p.Create(tv1, ir);
-        //    Assert.AreEqual(2, tv1.NormChildren.Length);
-        //    Assert.AreEqual(0, tv1.AssocChildren.Length);
-        //    Assert.AreEqual(0, ir.NormChildren.Length);
-        //    Assert.AreEqual(1, ir.AssocChildren.Length);
-        //}
-
-
         [Test]
         public void testGet()
         {
-            MemoryPile<TerminalValueBase, InnerRelationBase> p;
-            p = new MemoryPile<TerminalValueBase, InnerRelationBase>();
+            MemoryPile<RootRelation, InnerRelation> p;
+            p = new MemoryPile<RootRelation, InnerRelation>();
 
-            TerminalValueBase tv1, tv2;
-            InnerRelationBase ir;
+            RootRelation tv1, tv2;
+            InnerRelation ir;
 
             tv1 = p.Create("a");
             tv2 = p.Create("b");
@@ -140,5 +103,45 @@ namespace test.blackbox.pile
             Assert.AreSame(ir, p.Get(tv1, tv2));
             Assert.IsNull(p.Get(tv2, tv1));
         }
+
+
+#if WITH_CHILDREN
+        [Test]
+        public void testChildren()
+        {
+            MemoryPile<RootRelation, InnerRelation> p;
+            p = new MemoryPile<RootRelation, InnerRelation>();
+
+            RootRelation tv1, tv2;
+            InnerRelation ir;
+
+            tv1 = p.Create("a");
+            Assert.AreEqual(0, tv1.NormChildren.Length);
+            Assert.AreEqual(0, tv1.AssocChildren.Length);
+
+            tv2 = p.Create("b");
+            Assert.AreEqual(0, tv2.NormChildren.Length);
+            Assert.AreEqual(0, tv2.AssocChildren.Length);
+
+            ir = p.Create(tv1, tv2);
+            Assert.AreEqual(0, ir.NormChildren.Length);
+            Assert.AreEqual(0, ir.AssocChildren.Length);
+            Assert.AreEqual(1, tv1.NormChildren.Length);
+            Assert.AreEqual(0, tv1.AssocChildren.Length);
+            Assert.AreEqual(0, tv2.NormChildren.Length);
+            Assert.AreEqual(1, tv2.AssocChildren.Length);
+
+            ir = p.Create(tv1, tv2);
+            Assert.AreEqual(1, tv1.NormChildren.Length);
+            Assert.AreEqual(1, tv2.AssocChildren.Length);
+
+            p.Create(tv1, ir);
+            Assert.AreEqual(2, tv1.NormChildren.Length);
+            Assert.AreEqual(0, tv1.AssocChildren.Length);
+            Assert.AreEqual(0, ir.NormChildren.Length);
+            Assert.AreEqual(1, ir.AssocChildren.Length);
+        }
+#endif
+
     }
 }

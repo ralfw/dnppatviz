@@ -17,15 +17,17 @@ namespace dnppv.pile
 
 
         private long id;
-//        private List<RelationBase> nChildren, aChildren;
-
+#if WITH_CHILDREN
+        private List<InnerRelation> nChildren, aChildren;
+#endif
 
         public RelationBase()
         {
             this.id = RelationBase.GenerateId();
-
-            //this.nChildren = new List<RelationBase>();
-            //this.aChildren = new List<RelationBase>();
+#if WITH_CHILDREN
+            this.nChildren = new List<InnerRelation>();
+            this.aChildren = new List<InnerRelation>();
+#endif
         }
 
 
@@ -34,32 +36,33 @@ namespace dnppv.pile
             get { return this.id; }
         }
 
+#if WITH_CHILDREN
+        #region Children management
+        internal void AddChild(InnerRelation child, bool isNormChild)
+        {
+            if (isNormChild)
+                lock (this.nChildren)
+                {
+                    this.nChildren.Add(child);
+                }
+            else
+                lock (this.aChildren)
+                {
+                    this.aChildren.Add(child);
+                }
+        }
 
-        //#region Children management
-        //internal void AddChild(RelationBase child, bool isNormChild)
-        //{
-        //    if (isNormChild)
-        //        lock (this.nChildren)
-        //        {
-        //            this.nChildren.Add(child);
-        //        }
-        //    else
-        //        lock (this.aChildren)
-        //        {
-        //            this.aChildren.Add(child);
-        //        }
-        //}
 
+        public InnerRelation[] NormChildren
+        {
+            get { lock (this.nChildren) { return this.nChildren.ToArray(); } }
+        }
 
-        //public RelationBase[] NormChildren
-        //{
-        //    get { lock (this.nChildren) { return this.nChildren.ToArray(); } }
-        //}
-
-        //public RelationBase[] AssocChildren
-        //{
-        //    get { lock (this.aChildren) { return this.aChildren.ToArray(); } }
-        //}
-        //#endregion
+        public InnerRelation[] AssocChildren
+        {
+            get { lock (this.aChildren) { return this.aChildren.ToArray(); } }
+        }
+        #endregion
+#endif
     }
 }

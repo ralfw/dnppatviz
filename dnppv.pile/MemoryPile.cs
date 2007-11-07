@@ -3,38 +3,45 @@ using System.Collections.Generic;
 using System.Collections;
 using System.Text;
 
+//TODO: Create generisch auslegen. Create<T>() mit T als Ableitung von TTerminalValue oder TRelation. So würden dann unterschiedliche Relationentypen im Pile möglich.
 namespace dnppv.pile
 {
-    public class MemoryPile<TTerminalValue, TRelation> 
-        where TTerminalValue : TerminalValueBase, new()
-        where TRelation : InnerRelationBase, new()
+    public class MemoryPile<TRootRelation, TInnerRelation> 
+        where TRootRelation : RootRelation, new()
+        where TInnerRelation : InnerRelation, new()
     {
-        private Dictionary<string, TTerminalValue> terminalValues;
+        private Dictionary<string, TRootRelation> terminalValues;
         private Hashtable innerRelations;
 
         public MemoryPile()
         {
-            this.terminalValues = new Dictionary<string, TTerminalValue>();
+            this.terminalValues = new Dictionary<string, TRootRelation>();
             this.innerRelations = new Hashtable();
         }
 
 
         #region Terminal Values
-        public TTerminalValue Create(string key)
+
+        public TRootRelation Create()
+        {
+            return this.Create(Guid.NewGuid().ToString());
+        }
+
+        public TRootRelation Create(string key)
         {
             bool isNew;
             return this.Create(key, out isNew);
         }
 
-        public TTerminalValue Create(string key, out bool isNew)
+        public TRootRelation Create(string key, out bool isNew)
         {
             //lock (this.terminalValues)
             //{
-                TTerminalValue tv;
+                TRootRelation tv;
                 isNew = !this.terminalValues.TryGetValue(key, out tv);
                 if (isNew)
                 {
-                    tv = new TTerminalValue();
+                    tv = new TRootRelation();
                     tv.Initialize(key);
                     this.terminalValues.Add(key, tv);
                 }
@@ -51,22 +58,22 @@ namespace dnppv.pile
 
 
         #region Create relation
-        public TRelation Create(RelationBase nParent, RelationBase aParent)
+        public TInnerRelation Create(RelationBase nParent, RelationBase aParent)
         {
             bool isNew;
             return this.Create(nParent, aParent, out isNew);
         }
 
-        public TRelation Create(RelationBase nParent, RelationBase aParent, out bool isNew)
+        public TInnerRelation Create(RelationBase nParent, RelationBase aParent, out bool isNew)
         {
             //lock (this.innerRelations)
             //{
-                TRelation child = this.Get(nParent, aParent);
+                TInnerRelation child = this.Get(nParent, aParent);
                 isNew = child == null;
 
                 if (isNew)
                 {
-                    child = new TRelation();
+                    child = new TInnerRelation();
                     child.Initialize(nParent, aParent);
 
                     Hashtable assocRelations;
@@ -87,15 +94,25 @@ namespace dnppv.pile
 
 
         #region Get relation
-        public TRelation Get(RelationBase nParent, RelationBase aParent)
+        public TRootRelation Get(string key)
         {
-            TRelation child = null;
+            TRootRelation tv;
+            if (this.terminalValues.TryGetValue(key, out tv))
+                return tv;
+            else
+                return null;
+        }
+
+
+        public TInnerRelation Get(RelationBase nParent, RelationBase aParent)
+        {
+            TInnerRelation child = null;
             Hashtable assocRelations;
             if (this.innerRelations.ContainsKey(nParent.Id))
             {
                 assocRelations = (Hashtable)this.innerRelations[nParent.Id];
                 if (assocRelations.ContainsKey(aParent.Id))
-                    child = (TRelation)assocRelations[aParent.Id];
+                    child = (TInnerRelation)assocRelations[aParent.Id];
             }
             return child;            
         }
