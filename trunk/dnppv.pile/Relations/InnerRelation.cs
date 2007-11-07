@@ -4,20 +4,22 @@ using System.Text;
 
 namespace dnppv.pile
 {
-    public class InnerRelationBase : RelationBase
+    public class InnerRelation : RelationBase
     {
         private RelationBase nParent, aParent;
 
 
-        public InnerRelationBase() { }
+        public InnerRelation() { }
 
         internal void Initialize(RelationBase nParent, RelationBase aParent)
         {
             this.nParent = nParent;
-            //this.nParent.AddChild(this, true);
 
             this.aParent = aParent;
-            //this.aParent.AddChild(this, false);
+#if WITH_CHILDREN
+            this.nParent.AddChild(this, true);
+            this.aParent.AddChild(this, false);
+#endif
         }
 
 

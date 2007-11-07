@@ -6,7 +6,7 @@ using dnppv.pile;
 
 namespace dnppv.pilepatternrecognizer
 {
-    internal class Pair : InnerRelationBase
+    internal class Pair : InnerRelation
     {
         private List<int> occurrences = new List<int>();
 
