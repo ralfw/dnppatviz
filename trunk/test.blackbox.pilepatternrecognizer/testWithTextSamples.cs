@@ -34,7 +34,7 @@ namespace test.blackbox.pilepatternrecognizer
             TestTextFile(@"..\..\Text Samples\mum1+2.txt", 10);
         }
 
-        [Test]
+        //[Test]
         public void testHamlet()
         {
             TestTextFile(@"..\..\Text Samples\hamlet.txt", 10);

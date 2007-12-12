@@ -32,7 +32,7 @@ namespace dnppv.pilepatternrecognizer
             this.ts.TraceEvent(TraceEventType.Information, 20, "# of signals received: {0}, time elapsed: {1}", signals.Count, DateTime.Now.Subtract(this.processingStarted)); this.ts.Flush();
 
             // pair relations until no more patterns are found
-            List<Dictionary<long, Pair>> patternLayers;
+            List<List<Pair>> patternLayers;
             patternLayers = this.FindPatterns(signals, pile);
             this.ts.TraceEvent(TraceEventType.Information, 30, "# of pattern layers: {0}, time elapsed: {1}", patternLayers.Count, DateTime.Now.Subtract(this.processingStarted)); this.ts.Flush();
 
@@ -47,7 +47,7 @@ namespace dnppv.pilepatternrecognizer
         #endregion
 
 
-        internal IPatternList BuildPatternList(List<Dictionary<long, Pair>> patternLayers, int signalCount)
+        internal IPatternList BuildPatternList(List<List<Pair>> patternLayers, int signalCount)
         {
             this.ts.TraceEvent(TraceEventType.Start, 100, "BuildPatternList started"); this.ts.Flush();
 
@@ -60,7 +60,7 @@ namespace dnppv.pilepatternrecognizer
                 this.ts.TraceEvent(TraceEventType.Information, 110, "Pattern layer: {0}", layer); this.ts.Flush();
 
                 // for all patterns of the same size...
-                foreach (Pair sr in patternLayers[layer].Values)
+                foreach (Pair sr in patternLayers[layer])
                 {
                     // create a pattern object...
                     int patternSize = layer + 2;
@@ -79,19 +79,19 @@ namespace dnppv.pilepatternrecognizer
         }
 
 
-        internal List<Dictionary<long, Pair>> FindPatterns(SortedList<int, RelationItem> signals, MemoryPile<Signal, Pair> pile)
+        internal List<List<Pair>> FindPatterns(SortedList<int, RelationItem> signals, MemoryPile<Signal, Pair> pile)
         {
             this.ts.TraceEvent(TraceEventType.Start, 200, "FindPatterns started");
 
-            List<Dictionary<long, Pair>> patternsInAllLayers = new List<Dictionary<long, Pair>>();
+            List<List<Pair>> patternsInAllLayers = new List<List<Pair>>();
 
             SortedList<int, RelationItem> pairedRelations = signals;
-            Dictionary<long, Pair> patternsInLayer;
+            List<Pair> patternsInLayer;
             do
             {
                 this.ts.TraceEvent(TraceEventType.Information, 210, "Relational layer: {0}, # of relations: {1}", patternsInAllLayers.Count, pairedRelations.Count); this.ts.Flush();
 
-                patternsInLayer = new Dictionary<long,Pair>();
+                patternsInLayer = new List<Pair>();
                 pairedRelations = PairRelations(pairedRelations, pile, patternsInLayer, patternsInAllLayers.Count+1);
                 this.ts.TraceEvent(TraceEventType.Information, 220, "# of patterns in layer: {0}, time elapsed: {1}", patternsInLayer.Count, DateTime.Now.Subtract(this.processingStarted)); this.ts.Flush();
 
@@ -104,7 +104,7 @@ namespace dnppv.pilepatternrecognizer
         }
 
 
-        internal SortedList<int, RelationItem> PairRelations(SortedList<int, RelationItem> relations, MemoryPile<Signal, Pair> pile, Dictionary<long, Pair> patternsInLayer, int layerIndex)
+        internal SortedList<int, RelationItem> PairRelations(SortedList<int, RelationItem> relations, MemoryPile<Signal, Pair> pile, List<Pair> patternsInLayer, int layerIndex)
         {
             this.ts.TraceEvent(TraceEventType.Verbose, 300, "PairRelations started @ {0}", DateTime.Now.Subtract(this.processingStarted)); this.ts.Flush();
 
@@ -125,9 +125,8 @@ namespace dnppv.pilepatternrecognizer
                         Pair newRel = pile.Create(prevRelItem.Relation, relItem.Relation, out isNew);
                         newRel.AddOccurrence(i - 1);
 
-                        if (!isNew)
-                            if (!patternsInLayer.ContainsKey(newRel.Id))
-                                patternsInLayer.Add(newRel.Id, newRel);
+                        if (newRel.OccurrenceCount == 2)
+                            patternsInLayer.Add(newRel);
                     }
                 }
 
@@ -140,7 +139,7 @@ namespace dnppv.pilepatternrecognizer
             SortedList<int, RelationItem> relationPairs = new SortedList<int, RelationItem>();
 
             // build sequence of only pattern relations in the order of their occurrences
-            foreach (Pair p in patternsInLayer.Values)
+            foreach (Pair p in patternsInLayer)
                 foreach (int o in p.Occurrences)
                     relationPairs.Add(o, new RelationItem(o, p));
             this.ts.TraceEvent(TraceEventType.Verbose, 320, "# of relation pairs: {0}, time elapsed: {1}", relationPairs.Count, DateTime.Now.Subtract(this.processingStarted)); this.ts.Flush();

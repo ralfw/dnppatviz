@@ -19,5 +19,10 @@ namespace dnppv.pilepatternrecognizer
         {
             get { return this.occurrences.ToArray(); }
         }
+
+        public int OccurrenceCount
+        {
+            get { return this.occurrences.Count; }
+        }
     }
 }
