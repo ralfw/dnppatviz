@@ -43,7 +43,7 @@ namespace test.whitebox.pilepatternrecognizer
             
             MemoryPile<Signal, Pair> pile;
             SortedList<int, RelationItem> signals;
-            Dictionary<long, Pair> patternsInLayer;
+            List<Pair> patternsInLayer;
             SortedList<int, RelationItem> relations;
 
             using (TextFileAdapter file = new TextFileAdapter(@"..\..\test1.txt"))
@@ -53,7 +53,7 @@ namespace test.whitebox.pilepatternrecognizer
                 signals = r.ConvertSignalsToTerminalValues(file, pile);
                 Assert.AreEqual(3, signals.Count);
 
-                patternsInLayer = new Dictionary<long, Pair>();
+                patternsInLayer = new List<Pair>();
                 relations = r.PairRelations(signals, pile, patternsInLayer, 1);
                 Assert.AreEqual(0, relations.Count);
             }
@@ -65,7 +65,7 @@ namespace test.whitebox.pilepatternrecognizer
                 signals = r.ConvertSignalsToTerminalValues(file, pile);
                 Assert.AreEqual(5, signals.Count);
 
-                patternsInLayer = new Dictionary<long, Pair>();
+                patternsInLayer = new List<Pair>();
                 relations = r.PairRelations(signals, pile, patternsInLayer, 1);
                 Assert.AreEqual(0, relations.Count);
 
@@ -81,7 +81,7 @@ namespace test.whitebox.pilepatternrecognizer
                 signals = r.ConvertSignalsToTerminalValues(file, pile);
                 Assert.AreEqual(7, signals.Count);
 
-                patternsInLayer = new Dictionary<long, Pair>();
+                patternsInLayer = new List<Pair>();
                 relations = r.PairRelations(signals, pile, patternsInLayer, 1);
                 Assert.AreEqual(4, relations.Count);
 
@@ -89,7 +89,7 @@ namespace test.whitebox.pilepatternrecognizer
                 Assert.AreEqual("b", ((Signal)((Pair)relations[0].Relation).AssocParent).Key);
                 Assert.AreEqual("c", ((Signal)((Pair)relations[1].Relation).AssocParent).Key);
 
-                patternsInLayer = new Dictionary<long, Pair>();
+                patternsInLayer = new List<Pair>();
                 relations = r.PairRelations(relations, pile, patternsInLayer, 2);
                 Assert.AreEqual(0, relations.Count);
             }
@@ -101,15 +101,15 @@ namespace test.whitebox.pilepatternrecognizer
                 signals = r.ConvertSignalsToTerminalValues(file, pile);
                 Assert.AreEqual(9, signals.Count);
 
-                patternsInLayer = new Dictionary<long, Pair>();
+                patternsInLayer = new List<Pair>();
                 relations = r.PairRelations(signals, pile, patternsInLayer, 1);
                 Assert.AreEqual(6, relations.Count);
 
-                patternsInLayer = new Dictionary<long, Pair>();
+                patternsInLayer = new List<Pair>();
                 relations = r.PairRelations(relations, pile, patternsInLayer, 2);
                 Assert.AreEqual(4, relations.Count);
 
-                patternsInLayer = new Dictionary<long, Pair>();
+                patternsInLayer = new List<Pair>();
                 relations = r.PairRelations(relations, pile, patternsInLayer, 3);
                 Assert.AreEqual(0, relations.Count);
             }
@@ -123,13 +123,13 @@ namespace test.whitebox.pilepatternrecognizer
             MemoryPile<Signal, Pair> pile = new MemoryPile<Signal, Pair>();
             SortedList<int, RelationItem> signals;
             SortedList<int, RelationItem> relations;
-            Dictionary<long, Pair> patternsInLayer;
+            List<Pair> patternsInLayer;
             using (TextFileAdapter file = new TextFileAdapter(@"..\..\test1.txt"))
             {
                 signals = r.ConvertSignalsToTerminalValues(file, pile);
                 Assert.AreEqual(3, signals.Count);
 
-                patternsInLayer = new Dictionary<long, Pair>();
+                patternsInLayer = new List<Pair>();
                 relations = r.PairRelations(signals, pile, patternsInLayer, 1);
                 Assert.AreEqual(0, relations.Count);
                 Assert.AreEqual(0, patternsInLayer.Count);
@@ -141,12 +141,12 @@ namespace test.whitebox.pilepatternrecognizer
                 signals = r.ConvertSignalsToTerminalValues(file, pile);
                 Assert.AreEqual(11, signals.Count);
 
-                patternsInLayer = new Dictionary<long, Pair>();
+                patternsInLayer = new List<Pair>();
                 relations = r.PairRelations(signals, pile, patternsInLayer, 1);
                 Assert.AreEqual(2, relations.Count);
                 Assert.AreEqual(2, patternsInLayer.Count);
 
-                patternsInLayer = new Dictionary<long, Pair>();
+                patternsInLayer = new List<Pair>();
                 relations = r.PairRelations(relations, pile, patternsInLayer, 2);
                 Assert.AreEqual(0, relations.Count);
                 Assert.AreEqual(0, patternsInLayer.Count);
@@ -158,12 +158,12 @@ namespace test.whitebox.pilepatternrecognizer
                 signals = r.ConvertSignalsToTerminalValues(file, pile);
                 Assert.AreEqual(12, signals.Count);
 
-                patternsInLayer = new Dictionary<long, Pair>();
+                patternsInLayer = new List<Pair>();
                 relations = r.PairRelations(signals, pile, patternsInLayer, 1);
                 Assert.AreEqual(4, relations.Count);
                 Assert.AreEqual(2, patternsInLayer.Count);
 
-                patternsInLayer = new Dictionary<long, Pair>();
+                patternsInLayer = new List<Pair>();
                 relations = r.PairRelations(relations, pile, patternsInLayer, 2);
                 Assert.AreEqual(0, relations.Count);
                 Assert.AreEqual(1, patternsInLayer.Count);
@@ -175,17 +175,17 @@ namespace test.whitebox.pilepatternrecognizer
                 signals = r.ConvertSignalsToTerminalValues(file, pile);
                 Assert.AreEqual(38, signals.Count);
 
-                patternsInLayer = new Dictionary<long, Pair>();
+                patternsInLayer = new List<Pair>();
                 relations = r.PairRelations(signals, pile, patternsInLayer, 1);
                 Assert.AreEqual(18, relations.Count);
                 Assert.AreEqual(6, patternsInLayer.Count);
 
-                patternsInLayer = new Dictionary<long, Pair>();
+                patternsInLayer = new List<Pair>();
                 relations = r.PairRelations(relations, pile, patternsInLayer, 2);
                 Assert.AreEqual(8, relations.Count);
                 Assert.AreEqual(3, patternsInLayer.Count);
 
-                patternsInLayer = new Dictionary<long, Pair>();
+                patternsInLayer = new List<Pair>();
                 relations = r.PairRelations(relations, pile, patternsInLayer, 3);
                 Assert.AreEqual(0, relations.Count);
                 Assert.AreEqual(1, patternsInLayer.Count);
@@ -200,7 +200,7 @@ namespace test.whitebox.pilepatternrecognizer
             MemoryPile<Signal, Pair> pile;
 
             SortedList<int, RelationItem> signals;
-            List<Dictionary<long, Pair>> patternLayers;
+            List<List<Pair>> patternLayers;
 
             using (TextFileAdapter file = new TextFileAdapter(@"..\..\test1.txt"))
             {
@@ -218,7 +218,7 @@ namespace test.whitebox.pilepatternrecognizer
                 Assert.AreEqual(1, patternLayers.Count);
                 Assert.AreEqual(2, patternLayers[0].Count);
 
-                List<Pair> patterns = new List<Pair>(patternLayers[0].Values);
+                List<Pair> patterns = new List<Pair>(patternLayers[0]);
                 Assert.AreEqual(3, patterns[0].Occurrences.Length);
                 Assert.AreEqual(0, patterns[0].Occurrences[0]);
                 Assert.AreEqual(3, patterns[0].Occurrences[1]);
@@ -239,7 +239,7 @@ namespace test.whitebox.pilepatternrecognizer
                 Assert.AreEqual(1, patternLayers[1].Count);
 
                 // patterns w size=2
-                List<Pair> patterns = new List<Pair>(patternLayers[0].Values);
+                List<Pair> patterns = new List<Pair>(patternLayers[0]);
                 // ab
                 Assert.AreEqual(3, patterns[0].Occurrences.Length);
                 Assert.AreEqual(0, patterns[0].Occurrences[0]);
@@ -253,7 +253,7 @@ namespace test.whitebox.pilepatternrecognizer
                 Assert.AreEqual(10, patterns[1].Occurrences[2]);
 
                 // patterns w size=3
-                patterns = new List<Pair>(patternLayers[1].Values);
+                patterns = new List<Pair>(patternLayers[1]);
                 // abx
                 Assert.AreEqual(2, patterns[0].Occurrences.Length);
                 Assert.AreEqual(0, patterns[0].Occurrences[0]);
@@ -316,7 +316,7 @@ namespace test.whitebox.pilepatternrecognizer
             MemoryPile<Signal, Pair> pile;
 
             SortedList<int, RelationItem> signals;
-            List<Dictionary<long, Pair>> patternLayers;
+            List<List<Pair>> patternLayers;
             IPatternList pl;
 
             using (TextFileAdapter file = new TextFileAdapter(@"..\..\test1.txt"))

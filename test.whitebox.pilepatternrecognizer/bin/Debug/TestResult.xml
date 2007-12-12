@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="UNNAMED" total="11" failures="0" not-run="0" date="2007-12-12" time="19:44:42">
+  <environment nunit-version="2.4.2.0" clr-version="2.0.50727.42" os-version="Microsoft Windows NT 5.1.2600 Service Pack 2" platform="Win32NT" cwd="C:\My Content\dotnetpro\2007\Musik visualisieren\Sources\test.whitebox.pilepatternrecognizer\bin\Debug" machine-name="FLIGHTPLAN" user="Ralf Westphal" user-domain="FLIGHTPLAN" />
+  <culture-info current-culture="de-DE" current-uiculture="de-DE" />
+  <test-suite name="UNNAMED" success="True" time="4.281" asserts="0">
+    <results>
+      <test-suite name="C:\My Content\dotnetpro\2007\Musik visualisieren\Sources\build\..\test.whitebox.pilepatternrecognizer\bin\Debug\test.whitebox.pilepatternrecognizer.dll" success="True" time="1.156" asserts="0">
+        <results>
+          <test-suite name="test" success="True" time="1.141" asserts="0">
+            <results>
+              <test-suite name="whitebox" success="True" time="1.141" asserts="0">
+                <results>
+                  <test-suite name="pilepatternrecognizer" success="True" time="1.078" asserts="0">
+                    <results>
+                      <test-suite name="tests" success="True" time="0.969" asserts="0">
+                        <results>
+                          <test-case name="test.whitebox.pilepatternrecognizer.tests.testBuildPatternList" executed="True" success="True" time="0.750" asserts="29" />
+                          <test-case name="test.whitebox.pilepatternrecognizer.tests.testConvertSignalsToTerminalValues" executed="True" success="True" time="0.047" asserts="5" />
+                          <test-case name="test.whitebox.pilepatternrecognizer.tests.testFindPatterns" executed="True" success="True" time="0.047" asserts="24" />
+                          <test-case name="test.whitebox.pilepatternrecognizer.tests.testPairRelations" executed="True" success="True" time="0.047" asserts="14" />
+                          <test-case name="test.whitebox.pilepatternrecognizer.tests.testPatternListObjectModel" executed="True" success="True" time="0.016" asserts="22" />
+                          <test-case name="test.whitebox.pilepatternrecognizer.tests.testPatternsInLevel" executed="True" success="True" time="0.016" asserts="20" />
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+      <test-suite name="C:\My Content\dotnetpro\2007\Musik visualisieren\Sources\build\..\test.blackbox.pilepatternrecognizer\bin\Debug\test.blackbox.pilepatternrecognizer.dll" success="True" time="2.734" asserts="0">
+        <results>
+          <test-suite name="test" success="True" time="2.688" asserts="0">
+            <results>
+              <test-suite name="blackbox" success="True" time="2.672" asserts="0">
+                <results>
+                  <test-suite name="pilepatternrecognizer" success="True" time="2.672" asserts="0">
+                    <results>
+                      <test-suite name="tests" success="True" time="0.594" asserts="0">
+                        <results>
+                          <test-case name="test.blackbox.pilepatternrecognizer.tests.testDetectPatterns1" executed="True" success="True" time="0.484" asserts="33" />
+                          <test-case name="test.blackbox.pilepatternrecognizer.tests.testDetectPatterns2" executed="True" success="True" time="0.031" asserts="16" />
+                        </results>
+                      </test-suite>
+                      <test-suite name="testsWithTextSamples" success="True" time="1.938" asserts="0">
+                        <results>
+                          <test-case name="test.blackbox.pilepatternrecognizer.testsWithTextSamples.test3Levels" executed="True" success="True" time="0.031" asserts="0" />
+                          <test-case name="test.blackbox.pilepatternrecognizer.testsWithTextSamples.testLoriot" executed="True" success="True" time="0.047" asserts="0" />
+                          <test-case name="test.blackbox.pilepatternrecognizer.testsWithTextSamples.testMaxUndMoritz" executed="True" success="True" time="1.859" asserts="0" />
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
