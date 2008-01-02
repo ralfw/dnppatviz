@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\My Content\dotnetpro\2007\Musik visualisieren\Sources\build\..\test.blackbox.patternfilter\bin\Debug\test.blackbox.patternfilter.dll" total="1" failures="0" not-run="0" date="2008-01-02" time="14:10:04">
+  <environment nunit-version="2.4.2.0" clr-version="2.0.50727.42" os-version="Microsoft Windows NT 5.1.2600 Service Pack 2" platform="Win32NT" cwd="C:\My Content\dotnetpro\2007\Musik visualisieren\Sources\test.blackbox.patternfilter\bin\Debug" machine-name="FLIGHTPLAN" user="Ralf Westphal" user-domain="FLIGHTPLAN" />
+  <culture-info current-culture="de-DE" current-uiculture="de-DE" />
+  <test-suite name="C:\My Content\dotnetpro\2007\Musik visualisieren\Sources\build\..\test.blackbox.patternfilter\bin\Debug\test.blackbox.patternfilter.dll" success="True" time="1.109" asserts="0">
+    <results>
+      <test-suite name="test" success="True" time="1.109" asserts="0">
+        <results>
+          <test-suite name="blackbox" success="True" time="1.109" asserts="0">
+            <results>
+              <test-suite name="patternfilter" success="True" time="1.109" asserts="0">
+                <results>
+                  <test-suite name="tests" success="True" time="1.063" asserts="0">
+                    <results>
+                      <test-case name="test.blackbox.patternfilter.tests.testAnalyse" executed="True" success="True" time="1.047" asserts="1" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
