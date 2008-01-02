@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dnppv.arcdiagram", "dnppv.arcdiagram\dnppv.arcdiagram.csproj", "{411B5FAB-23AC-4590-9026-D9870D7326DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test.arcdiagram", "test.arcdiagram\test.arcdiagram.csproj", "{D24CE318-AEDA-48F8-BE68-52F5BF7452D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{411B5FAB-23AC-4590-9026-D9870D7326DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{411B5FAB-23AC-4590-9026-D9870D7326DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{411B5FAB-23AC-4590-9026-D9870D7326DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{411B5FAB-23AC-4590-9026-D9870D7326DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D24CE318-AEDA-48F8-BE68-52F5BF7452D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D24CE318-AEDA-48F8-BE68-52F5BF7452D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D24CE318-AEDA-48F8-BE68-52F5BF7452D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D24CE318-AEDA-48F8-BE68-52F5BF7452D4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
