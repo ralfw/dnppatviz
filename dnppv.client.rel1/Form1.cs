@@ -45,7 +45,9 @@ namespace dnppv.client.rel1
         {
             IPatternList pl;
 
-            using (IFileAdapter fa = new dnppv.textfileadapter.TextFileAdapter(filename))
+            // pattern extractor needs to match the textfileadapter!!! see below
+            //using (IFileAdapter fa = new dnppv.textfileadapter.NonWhitespaceTextFileAdapter(filename))
+            using (IFileAdapter fa = new dnppv.textfileadapter.RawTextFileAdapter(filename))
             {
                 IPatternFilter pf;
                 pf = new dnppv.patternfilter.PatternFilter();
@@ -78,6 +80,9 @@ namespace dnppv.client.rel1
             using (System.IO.StreamReader sr = new System.IO.StreamReader(filename, Encoding.Default))
             {
                 text = sr.ReadToEnd();
+
+                // remove whitespace - only if NonWhitespaceTextfileAdapter is used!
+                //text = text.Replace("\n", "").Replace("\r", "").Replace("\t", "").Replace(" ", "");
             }
         }
 
