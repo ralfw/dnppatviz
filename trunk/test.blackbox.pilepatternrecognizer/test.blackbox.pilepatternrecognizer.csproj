@@ -70,6 +70,8 @@
     <Content Include="test3levelsWithOverlap.txt">
     </Content>
     <Content Include="test3levelsWithOverlap analysis.txt" />
+    <Content Include="testABABA.txt">
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
