@@ -32,15 +32,15 @@ namespace test.arcdiagram
             Pattern p;
 
             p = new Pattern(5);
-            p.occurrences.Add(new PatternOccurrence(0, 10));
-            p.occurrences.Add(new PatternOccurrence(80, 95));
+            p.occurrences.Add(new PatternOccurrence(0, 4));
+            p.occurrences.Add(new PatternOccurrence(80, 84));
             pl.patterns.Add(p);
 
             p = new Pattern(2);
-            p.occurrences.Add(new PatternOccurrence(20, 30));
-            p.occurrences.Add(new PatternOccurrence(30, 40));
-            p.occurrences.Add(new PatternOccurrence(40, 50));
-            p.occurrences.Add(new PatternOccurrence(50, 60));
+            p.occurrences.Add(new PatternOccurrence(20, 21));
+            p.occurrences.Add(new PatternOccurrence(30, 31));
+            p.occurrences.Add(new PatternOccurrence(40, 41));
+            p.occurrences.Add(new PatternOccurrence(50, 51));
             pl.patterns.Add(p);
 
             this.arcDiagram1.Patterns = pl;
@@ -48,24 +48,47 @@ namespace test.arcdiagram
 
         private void größerAlsCtlToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PatternList pl = new PatternList(3000);
+            PatternList pl = new PatternList(1505);
             Pattern p;
 
             p = new Pattern(5);
-            p.occurrences.Add(new PatternOccurrence(0, 10));
-            p.occurrences.Add(new PatternOccurrence(1500, 2996));
+            p.occurrences.Add(new PatternOccurrence(0, 4));
+            p.occurrences.Add(new PatternOccurrence(1500, 1504));
             pl.patterns.Add(p);
 
             p = new Pattern(2);
-            p.occurrences.Add(new PatternOccurrence(200, 300));
-            p.occurrences.Add(new PatternOccurrence(300, 400));
-            p.occurrences.Add(new PatternOccurrence(400, 500));
-            p.occurrences.Add(new PatternOccurrence(500, 600));
+            p.occurrences.Add(new PatternOccurrence(200, 201));
+            p.occurrences.Add(new PatternOccurrence(300, 301));
+            p.occurrences.Add(new PatternOccurrence(400, 401));
+            p.occurrences.Add(new PatternOccurrence(500, 501));
             pl.patterns.Add(p);
 
             p = new Pattern(50);
-            p.occurrences.Add(new PatternOccurrence(50, 500));
-            p.occurrences.Add(new PatternOccurrence(1000, 1500));
+            p.occurrences.Add(new PatternOccurrence(50, 99));
+            p.occurrences.Add(new PatternOccurrence(1000, 1049));
+            pl.patterns.Add(p);
+
+            this.arcDiagram1.Patterns = pl;
+        }
+
+        private void ababaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PatternList pl = new PatternList(5);
+            Pattern p;
+
+            p = new Pattern(2);
+            p.occurrences.Add(new PatternOccurrence(0, 1));
+            p.occurrences.Add(new PatternOccurrence(2, 3));
+            pl.patterns.Add(p);
+
+            p = new Pattern(2);
+            p.occurrences.Add(new PatternOccurrence(1, 2));
+            p.occurrences.Add(new PatternOccurrence(3, 4));
+            pl.patterns.Add(p);
+
+            p = new Pattern(3);
+            p.occurrences.Add(new PatternOccurrence(0, 2));
+            p.occurrences.Add(new PatternOccurrence(2, 4));
             pl.patterns.Add(p);
 
             this.arcDiagram1.Patterns = pl;

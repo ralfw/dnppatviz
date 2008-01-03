@@ -16,7 +16,11 @@ namespace dnppv.arcdiagram
     public partial class ArcDiagram : UserControl
     {
         private IPatternList patterns;
+
         private Color arcLineColor;
+        private int arcLineAlpha;
+        
+        private Color arcLineColorDraw;
 
         private TraceSource ts = new TraceSource("ArcDiagram", SourceLevels.Off);
 
@@ -30,10 +34,12 @@ namespace dnppv.arcdiagram
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
 
+            this.arcLineAlpha = 50;
             this.ArcLineColor = Color.Blue;
         }
 
 
+        #region public properties
         [Browsable(false)]
         public IPatternList Patterns
         {
@@ -50,6 +56,8 @@ namespace dnppv.arcdiagram
         }
 
 
+        #region designer properties
+        [Category("ArcDiagram")]
         public Color ArcLineColor
         {
             get
@@ -59,14 +67,38 @@ namespace dnppv.arcdiagram
 
             set
             {
-                this.arcLineColor = Color.FromArgb(40, value);
+                this.arcLineColor = value;
+                RecalcTransparentArcLineColor();
                 #region trace
                 this.ts.TraceEvent(TraceEventType.Verbose, 10, "Set ArcLineColor: {0}", value);
                 #endregion
-
                 this.Invalidate();
             }
         }
+
+
+        [Category("ArcDiagram")]
+        public int ArcLineAlpha
+        {
+            get { return this.arcLineAlpha; }
+            set
+            {
+                this.arcLineAlpha = Math.Abs(value) % 256;
+                RecalcTransparentArcLineColor();
+                #region trace
+                this.ts.TraceEvent(TraceEventType.Verbose, 15, "Set ArcLineAlpha: {0}", value);
+                #endregion
+                this.Invalidate();
+            }
+        }
+
+
+        private void RecalcTransparentArcLineColor()
+        {
+            this.arcLineColorDraw = Color.FromArgb(this.arcLineAlpha, this.arcLineColor);
+        }
+        #endregion
+        #endregion
 
 
         private void ArcDiagram_Paint(object sender, PaintEventArgs e)
@@ -75,6 +107,7 @@ namespace dnppv.arcdiagram
         }
 
 
+        #region draw diagram
         private void DrawDiagram(Graphics g)
         {
             g.FillRectangle(Brushes.White, 0, 0, this.Width, this.Height);
@@ -92,19 +125,25 @@ namespace dnppv.arcdiagram
                     this.ts.TraceEvent(TraceEventType.Information, 25, "displayRatio={0}, canvas width={1}, signal count={2}", displayRatio, this.Width, this.patterns.SignalCount);
                     #endregion
 
+                    float yBaseLine = this.Height; // base line so wählen, dass die kreise unten abgeschnitten werden, damit halbkreisbögen entstehen
                     foreach (IPattern p in this.patterns)
                     {
-                        foreach (IPatternOccurrence po in p)
+                        IPatternOccurrence po = p[0];
+                        for (int i = 1; i < p.Count; i++)
                         {
+                            IPatternOccurrence poNext = p[i];
+
                             #region trace
-                            this.ts.TraceEvent(TraceEventType.Verbose, 27, "pattern: start={0}, end={1}, size={2}", po.Start, po.End, p.Size);
+                            this.ts.TraceEvent(TraceEventType.Verbose, 27, "pattern: {0}. {1} -> {2}, size={3}", i, po.Start, poNext.Start, p.Size);
                             #endregion
-                            this.DrawArc(g, po.Start*displayRatio, po.End*displayRatio, p.Size*displayRatio, this.Height);
+                            this.DrawArc(g, po.Start * displayRatio, poNext.Start * displayRatio, p.Size * displayRatio, yBaseLine);
+
+                            po = poNext;
                         }
                     }
                 }
-                else
-                    g.DrawString("No patterns found!", this.Font, Brushes.Black, 5, this.Height - this.Font.Height- 5);
+                //else
+                //    g.DrawString("No patterns found!", this.Font, Brushes.Black, 5, this.Height - this.Font.Height- 5);
             #endregion
         }
 
@@ -115,28 +154,19 @@ namespace dnppv.arcdiagram
             this.ts.TraceEvent(TraceEventType.Information, 30, "DrawArc: xFrom={0}, xTo={1}, lineWidth={2}, yBaseLine={3}",
                                 xFrom, xTo, lineWidth, yBaseLine);
             #endregion
-            float dR = xTo + lineWidth - xFrom;
-            float dC = dR - 2 * lineWidth / 2;
+            Pen p = new Pen(this.arcLineColorDraw, lineWidth); // stift mit transparenter farbe für den bogen
 
-            GraphicsPath path = new GraphicsPath();
-            path.AddRectangle(new Rectangle((int)xFrom, (int)(yBaseLine - dR / 2), (int)dR, (int)(dR / 2)));
-            g.Clip = new Region(path);
-
-            Pen p = new Pen(this.arcLineColor, lineWidth);
-            int adjust = lineWidth % 2 == 0 ? 1 : 0;
-            float wArc = dC + adjust;
-            float hArc = dC + adjust;
-
+            float wArc = xTo - xFrom; // durchmesser bzw. weite des bogens
+            float hArc = xTo - xFrom; // höhe = durchmesser, da halbkreise gezeichnet werden
             #region trace
             this.ts.TraceEvent(TraceEventType.Verbose, 35, "DrawEllipse: x={0}, y={1}, w={2}, h={3}",
-                               xFrom + lineWidth / 2 - adjust, yBaseLine - dC / 2, wArc, hArc);
+                               xFrom + lineWidth / 2, yBaseLine - hArc / 2, wArc, hArc);
             #endregion
-            g.DrawEllipse(p, xFrom + lineWidth / 2 - adjust, yBaseLine - dC / 2, wArc, hArc);
+            g.DrawEllipse(p, xFrom + lineWidth / 2, yBaseLine - hArc / 2, wArc, hArc);
+                // stift in der mitte des striches ansetzen, daher xFrom+lineWidth/2
 
             p.Dispose();
-            g.Clip.Dispose();
-            g.ResetClip();
-            path.Dispose();
-        }        
+        }
+        #endregion
     }
 }
