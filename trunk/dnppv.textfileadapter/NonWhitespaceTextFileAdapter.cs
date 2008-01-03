@@ -7,50 +7,56 @@ using dnppv.contracts.fileadapter;
 
 namespace dnppv.textfileadapter
 {
-    public class TextFileAdapter : IFileAdapter
+    public class NonWhitespaceTextFileAdapter : IFileAdapter
     {
         string filename;
-        StreamReader sr;
-        char[] buffer;
+        string buffer;
+        int index;
 
 
-        public TextFileAdapter() { }
+        public NonWhitespaceTextFileAdapter() { }
 
-        public TextFileAdapter(string filename)
+        public NonWhitespaceTextFileAdapter(string filename)
         {
             this.Open(filename);
         }
 
 
+        public string Text
+        {
+            get
+            {
+                return this.buffer;
+            }
+        }
+
+
         #region IFileAdapter Members
- 
+
         public void Open(string filename)
         {
-            if (this.sr != null) this.sr.Close();
-
-            this.filename = filename;
-            this.sr = new StreamReader(filename, Encoding.Default);
-            this.buffer = new char[1];  // a buffer len of 1 might be slow - but it´s simple to start with
+            this.buffer = System.IO.File.ReadAllText(filename, System.Text.Encoding.Default);
+            this.buffer = this.buffer.Replace("\n", "").Replace("\r", "").Replace("\t", "").Replace(" ", "");
+            index = -1;
         }
- 
+
         public void Close()
         {
-            if (this.sr != null)
-            {
-                this.sr.Close();
-                this.sr = null;
-            }
+            this.buffer = null;
         }
 
 
         public bool Read()
         {
-            if (this.sr == null)
+            if (this.buffer == null)
                 return false;
-            else if (this.sr.EndOfStream)
-                return false;
+            else if (this.index < this.buffer.Length - 1)
+            {
+                this.index++;
+                return true;
+            }
             else
-                return this.sr.Read(this.buffer, 0, this.buffer.Length) > 0;
+                return false;
         }
 
 
@@ -58,8 +64,8 @@ namespace dnppv.textfileadapter
         {
             get
             {
-                if (this.sr != null)
-                    return this.buffer[0].ToString();
+                if (this.buffer != null)
+                    return this.buffer[this.index].ToString();
                 else
                     throw new InvalidOperationException("No file open!");
             }
@@ -70,7 +76,7 @@ namespace dnppv.textfileadapter
         {
             get
             {
-                return -1; // length of file is not necessarily equal to number of chars in file
+                return this.buffer.Length;
             }
         }
 
