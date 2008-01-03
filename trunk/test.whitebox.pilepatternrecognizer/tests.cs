@@ -19,7 +19,7 @@ namespace test.whitebox.pilepatternrecognizer
         {
             PilePatternRecognizer r = new PilePatternRecognizer();
             MemoryPile<Signal, Pair> pile = new MemoryPile<Signal, Pair>();
-            using(TextFileAdapter file = new TextFileAdapter(@"..\..\test1.txt"))
+            using(RawTextFileAdapter file = new RawTextFileAdapter(@"..\..\test1.txt"))
             {
                 SortedList<int, RelationItem> signals;
                 signals = r.ConvertSignalsToTerminalValues(file, pile);
@@ -46,7 +46,7 @@ namespace test.whitebox.pilepatternrecognizer
             List<Pair> patternsInLayer;
             SortedList<int, RelationItem> relations;
 
-            using (TextFileAdapter file = new TextFileAdapter(@"..\..\test1.txt"))
+            using (RawTextFileAdapter file = new RawTextFileAdapter(@"..\..\test1.txt"))
             {
                 pile = new MemoryPile<Signal, Pair>();
 
@@ -58,7 +58,7 @@ namespace test.whitebox.pilepatternrecognizer
                 Assert.AreEqual(0, relations.Count);
             }
 
-            using (TextFileAdapter file = new TextFileAdapter(@"..\..\test1a.txt"))
+            using (RawTextFileAdapter file = new RawTextFileAdapter(@"..\..\test1a.txt"))
             {
                 pile = new MemoryPile<Signal, Pair>();
 
@@ -74,7 +74,7 @@ namespace test.whitebox.pilepatternrecognizer
                 //Assert.AreEqual(0, relations.Count);
             }
 
-            using (TextFileAdapter file = new TextFileAdapter(@"..\..\test1b.txt"))
+            using (RawTextFileAdapter file = new RawTextFileAdapter(@"..\..\test1b.txt"))
             {
                 pile = new MemoryPile<Signal, Pair>();
 
@@ -94,7 +94,7 @@ namespace test.whitebox.pilepatternrecognizer
                 Assert.AreEqual(0, relations.Count);
             }
 
-            using (TextFileAdapter file = new TextFileAdapter(@"..\..\test1c.txt"))
+            using (RawTextFileAdapter file = new RawTextFileAdapter(@"..\..\test1c.txt"))
             {
                 pile = new MemoryPile<Signal, Pair>();
 
@@ -124,7 +124,7 @@ namespace test.whitebox.pilepatternrecognizer
             SortedList<int, RelationItem> signals;
             SortedList<int, RelationItem> relations;
             List<Pair> patternsInLayer;
-            using (TextFileAdapter file = new TextFileAdapter(@"..\..\test1.txt"))
+            using (RawTextFileAdapter file = new RawTextFileAdapter(@"..\..\test1.txt"))
             {
                 signals = r.ConvertSignalsToTerminalValues(file, pile);
                 Assert.AreEqual(3, signals.Count);
@@ -136,7 +136,7 @@ namespace test.whitebox.pilepatternrecognizer
             }
 
             pile = new MemoryPile<Signal, Pair>();
-            using (TextFileAdapter file = new TextFileAdapter(@"..\..\test2.txt"))
+            using (RawTextFileAdapter file = new RawTextFileAdapter(@"..\..\test2.txt"))
             {
                 signals = r.ConvertSignalsToTerminalValues(file, pile);
                 Assert.AreEqual(11, signals.Count);
@@ -153,7 +153,7 @@ namespace test.whitebox.pilepatternrecognizer
             }
 
             pile = new MemoryPile<Signal, Pair>();
-            using (TextFileAdapter file = new TextFileAdapter(@"..\..\test3.txt"))
+            using (RawTextFileAdapter file = new RawTextFileAdapter(@"..\..\test3.txt"))
             {
                 signals = r.ConvertSignalsToTerminalValues(file, pile);
                 Assert.AreEqual(12, signals.Count);
@@ -170,7 +170,7 @@ namespace test.whitebox.pilepatternrecognizer
             }
 
             pile = new MemoryPile<Signal, Pair>();
-            using (TextFileAdapter file = new TextFileAdapter(@"..\..\test4.txt"))
+            using (RawTextFileAdapter file = new RawTextFileAdapter(@"..\..\test4.txt"))
             {
                 signals = r.ConvertSignalsToTerminalValues(file, pile);
                 Assert.AreEqual(38, signals.Count);
@@ -202,7 +202,7 @@ namespace test.whitebox.pilepatternrecognizer
             SortedList<int, RelationItem> signals;
             List<List<Pair>> patternLayers;
 
-            using (TextFileAdapter file = new TextFileAdapter(@"..\..\test1.txt"))
+            using (RawTextFileAdapter file = new RawTextFileAdapter(@"..\..\test1.txt"))
             {
                 pile = new MemoryPile<Signal, Pair>();
                 signals = r.ConvertSignalsToTerminalValues(file, pile);
@@ -210,7 +210,7 @@ namespace test.whitebox.pilepatternrecognizer
                 Assert.AreEqual(0, patternLayers.Count);
             }
 
-            using (TextFileAdapter file = new TextFileAdapter(@"..\..\test2.txt"))
+            using (RawTextFileAdapter file = new RawTextFileAdapter(@"..\..\test2.txt"))
             {
                 pile = new MemoryPile<Signal, Pair>();
                 signals = r.ConvertSignalsToTerminalValues(file, pile);
@@ -229,7 +229,7 @@ namespace test.whitebox.pilepatternrecognizer
                 Assert.AreEqual(6, patterns[1].Occurrences[1]);
             }
 
-            using (TextFileAdapter file = new TextFileAdapter(@"..\..\test3.txt"))
+            using (RawTextFileAdapter file = new RawTextFileAdapter(@"..\..\test3.txt"))
             {
                 pile = new MemoryPile<Signal, Pair>();
                 signals = r.ConvertSignalsToTerminalValues(file, pile);
@@ -319,7 +319,7 @@ namespace test.whitebox.pilepatternrecognizer
             List<List<Pair>> patternLayers;
             IPatternList pl;
 
-            using (TextFileAdapter file = new TextFileAdapter(@"..\..\test1.txt"))
+            using (RawTextFileAdapter file = new RawTextFileAdapter(@"..\..\test1.txt"))
             {
                 pile = new MemoryPile<Signal, Pair>();
                 signals = r.ConvertSignalsToTerminalValues(file, pile);
@@ -330,7 +330,7 @@ namespace test.whitebox.pilepatternrecognizer
                 Assert.AreEqual(0, pl.Count);
             }
 
-            using (TextFileAdapter file = new TextFileAdapter(@"..\..\test2.txt"))
+            using (RawTextFileAdapter file = new RawTextFileAdapter(@"..\..\test2.txt"))
             {
                 pile = new MemoryPile<Signal, Pair>();
                 signals = r.ConvertSignalsToTerminalValues(file, pile);
@@ -352,7 +352,7 @@ namespace test.whitebox.pilepatternrecognizer
                 Assert.AreEqual(6, pl[1][1].Start);
             }
 
-            using (TextFileAdapter file = new TextFileAdapter(@"..\..\test3.txt"))
+            using (RawTextFileAdapter file = new RawTextFileAdapter(@"..\..\test3.txt"))
             {
                 pile = new MemoryPile<Signal, Pair>();
                 signals = r.ConvertSignalsToTerminalValues(file, pile);
