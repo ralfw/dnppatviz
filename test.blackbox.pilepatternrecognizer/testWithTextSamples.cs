@@ -21,6 +21,12 @@ namespace test.blackbox.pilepatternrecognizer
         }
 
         [Test]
+        public void testABABA()
+        {
+            TestTextFile(@"..\..\testABABA.txt", int.MaxValue);
+        }
+
+        [Test]
         public void testLoriot()
         {
             TestTextFile(@"..\..\Text Samples\loriot.txt", int.MaxValue);
@@ -47,7 +53,7 @@ namespace test.blackbox.pilepatternrecognizer
             r = new dnppv.pilepatternrecognizer.PilePatternRecognizer();
 
             IPatternList pl;
-            using (TextFileAdapter fa = new TextFileAdapter(filename))
+            using (RawTextFileAdapter fa = new RawTextFileAdapter(filename))
             {
                 pl = r.DetectPatterns(fa);
                 DumpPatternStats(pl);
