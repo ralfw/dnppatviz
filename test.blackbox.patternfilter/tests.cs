@@ -24,7 +24,7 @@ namespace test.blackbox.patternfilter
                 text = sr.ReadToEnd();
             }
 
-            using(TextFileAdapter tfa = new TextFileAdapter(@"..\..\test.txt"))
+            using(RawTextFileAdapter tfa = new RawTextFileAdapter(@"..\..\test.txt"))
             {
                 PatternFilter pf;
                 pf = new PatternFilter();
