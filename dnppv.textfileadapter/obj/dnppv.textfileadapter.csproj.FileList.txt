@@ -1,8 +1,0 @@
-obj\Debug\ResolveAssemblyReference.cache
-bin\Debug\dnppv.textfileadapter.dll
-bin\Debug\dnppv.textfileadapter.pdb
-bin\Debug\dnppv.contracts.fileadapter.dll
-bin\Debug\dnppv.contracts.fileadapter.pdb
-bin\Debug\dnppv.contracts.fileadapter.xml
-obj\Debug\dnppv.textfileadapter.dll
-obj\Debug\dnppv.textfileadapter.pdb
