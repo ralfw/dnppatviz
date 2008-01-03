@@ -1,9 +1,0 @@
-bin\Debug\tests.performance.pile.dll
-bin\Debug\tests.performance.pile.pdb
-bin\Debug\dnppv.pile.dll
-bin\Debug\nunit.core.dll
-bin\Debug\nunit.framework.dll
-bin\Debug\dnppv.pile.pdb
-obj\Debug\ResolveAssemblyReference.cache
-obj\Debug\tests.performance.pile.dll
-obj\Debug\tests.performance.pile.pdb
