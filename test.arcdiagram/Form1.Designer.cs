@@ -28,27 +28,16 @@ namespace test.arcdiagram
         /// </summary>
         private void InitializeComponent()
         {
-            this.arcDiagram1 = new dnppv.arcdiagram.ArcDiagram();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.diagrammtestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nullToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.leerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kleinerAlsCtlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.größerAlsCtlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.arcDiagram1 = new dnppv.arcdiagram.ArcDiagram();
+            this.ababaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // arcDiagram1
-            // 
-            this.arcDiagram1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.arcDiagram1.ArcLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
-            this.arcDiagram1.Location = new System.Drawing.Point(12, 36);
-            this.arcDiagram1.Name = "arcDiagram1";
-            this.arcDiagram1.Patterns = null;
-            this.arcDiagram1.Size = new System.Drawing.Size(358, 175);
-            this.arcDiagram1.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -66,7 +55,8 @@ namespace test.arcdiagram
             this.nullToolStripMenuItem,
             this.leerToolStripMenuItem,
             this.kleinerAlsCtlToolStripMenuItem,
-            this.größerAlsCtlToolStripMenuItem});
+            this.größerAlsCtlToolStripMenuItem,
+            this.ababaToolStripMenuItem});
             this.diagrammtestsToolStripMenuItem.Name = "diagrammtestsToolStripMenuItem";
             this.diagrammtestsToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
             this.diagrammtestsToolStripMenuItem.Text = "Diagrammtests";
@@ -74,30 +64,50 @@ namespace test.arcdiagram
             // nullToolStripMenuItem
             // 
             this.nullToolStripMenuItem.Name = "nullToolStripMenuItem";
-            this.nullToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.nullToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.nullToolStripMenuItem.Text = "null";
             this.nullToolStripMenuItem.Click += new System.EventHandler(this.nullToolStripMenuItem_Click);
             // 
             // leerToolStripMenuItem
             // 
             this.leerToolStripMenuItem.Name = "leerToolStripMenuItem";
-            this.leerToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.leerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.leerToolStripMenuItem.Text = "leer";
             this.leerToolStripMenuItem.Click += new System.EventHandler(this.leerToolStripMenuItem_Click);
             // 
             // kleinerAlsCtlToolStripMenuItem
             // 
             this.kleinerAlsCtlToolStripMenuItem.Name = "kleinerAlsCtlToolStripMenuItem";
-            this.kleinerAlsCtlToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.kleinerAlsCtlToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.kleinerAlsCtlToolStripMenuItem.Text = "kleiner als ctl";
             this.kleinerAlsCtlToolStripMenuItem.Click += new System.EventHandler(this.kleinerAlsCtlToolStripMenuItem_Click);
             // 
             // größerAlsCtlToolStripMenuItem
             // 
             this.größerAlsCtlToolStripMenuItem.Name = "größerAlsCtlToolStripMenuItem";
-            this.größerAlsCtlToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.größerAlsCtlToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.größerAlsCtlToolStripMenuItem.Text = "größer als ctl";
             this.größerAlsCtlToolStripMenuItem.Click += new System.EventHandler(this.größerAlsCtlToolStripMenuItem_Click);
+            // 
+            // arcDiagram1
+            // 
+            this.arcDiagram1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.arcDiagram1.ArcLineAlpha = 50;
+            this.arcDiagram1.ArcLineColor = System.Drawing.Color.Black;
+            this.arcDiagram1.Location = new System.Drawing.Point(12, 32);
+            this.arcDiagram1.Name = "arcDiagram1";
+            this.arcDiagram1.Patterns = null;
+            this.arcDiagram1.Size = new System.Drawing.Size(358, 184);
+            this.arcDiagram1.TabIndex = 2;
+            // 
+            // ababaToolStripMenuItem
+            // 
+            this.ababaToolStripMenuItem.Name = "ababaToolStripMenuItem";
+            this.ababaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ababaToolStripMenuItem.Text = "ababa";
+            this.ababaToolStripMenuItem.Click += new System.EventHandler(this.ababaToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -118,13 +128,14 @@ namespace test.arcdiagram
 
         #endregion
 
-        private dnppv.arcdiagram.ArcDiagram arcDiagram1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem diagrammtestsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nullToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem leerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kleinerAlsCtlToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem größerAlsCtlToolStripMenuItem;
+        private dnppv.arcdiagram.ArcDiagram arcDiagram1;
+        private System.Windows.Forms.ToolStripMenuItem ababaToolStripMenuItem;
     }
 }
 

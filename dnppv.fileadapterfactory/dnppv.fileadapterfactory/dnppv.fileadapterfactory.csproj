@@ -4,17 +4,17 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{411B5FAB-23AC-4590-9026-D9870D7326DB}</ProjectGuid>
+    <ProjectGuid>{C9770EDD-4002-4B19-B7D5-316EE552D76F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>dnppv.arcdiagram</RootNamespace>
-    <AssemblyName>dnppv.arcdiagram</AssemblyName>
+    <RootNamespace>dnppv.fileadapterfactory</RootNamespace>
+    <AssemblyName>dnppv.fileadapterfactory</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -28,34 +28,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="dnppv.contracts.patternrecognizer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\bin\dnppv.contracts.patternrecognizer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Design" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArcDiagram.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ArcDiagram.Designer.cs">
-      <DependentUpon>ArcDiagram.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ArcDiagramDesigner.cs">
-    </Compile>
+    <Compile Include="FileAdapterFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="ArcDiagram.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>ArcDiagram.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
