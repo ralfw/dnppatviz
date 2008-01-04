@@ -14,6 +14,9 @@ namespace dnppv.client.rel2
 {
     public partial class WinMain : Form
     {
+        private IFileAdapterFactory faf;
+
+
         public WinMain()
         {
             InitializeComponent();
@@ -21,6 +24,7 @@ namespace dnppv.client.rel2
             this.openFileDialog1.InitialDirectory = Environment.CurrentDirectory;
 
             ralfw.Microkernel.DynamicBinder.LoadBindings();
+            this.faf = ralfw.Microkernel.DynamicBinder.GetInstance<IFileAdapterFactory>();
         }
 
 
@@ -32,6 +36,14 @@ namespace dnppv.client.rel2
 
         private void analysierenToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            string fileFilter = "";
+            foreach (string supportedExtension in this.faf.FileExtensionsSupported)
+            {
+                if (fileFilter.Length > 0) fileFilter += "|";
+                fileFilter += string.Format("*.{0}|*.{0}", supportedExtension);
+            }
+            this.openFileDialog1.Filter = fileFilter;
+
             if (this.openFileDialog1.ShowDialog() == DialogResult.OK)
                 Analyse(openFileDialog1.FileName);
         }
@@ -41,8 +53,10 @@ namespace dnppv.client.rel2
         {
             IPatternList pl;
 
-            using (IFileAdapter fa = new dnppv.textfileadapter.RawTextFileAdapter(filename))
+            using (IFileAdapter fa = faf.CreateFileAdapter(filename))
             {
+                fa.Open(filename);
+
                 IPatternFilter pf;
                 pf = new dnppv.patternfilter.PatternFilter();
 
