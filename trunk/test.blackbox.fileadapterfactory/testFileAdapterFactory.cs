@@ -18,6 +18,9 @@ namespace test.blackbox.fileadapterfactory
         [Test]
         public void testExtensions()
         {
+            ralfw.Microkernel.DynamicBinder.ClearBindings();
+            ralfw.Microkernel.DynamicBinder.LoadBindings();
+
             IFileAdapterFactory faf;
             faf = new FileAdapterFactory();
             string[] ext = faf.FileExtensionsSupported;
@@ -30,6 +33,9 @@ namespace test.blackbox.fileadapterfactory
         [Test]
         public void testCreate()
         {
+            ralfw.Microkernel.DynamicBinder.ClearBindings();
+            ralfw.Microkernel.DynamicBinder.LoadBindings();
+
             IFileAdapterFactory faf;
             faf = new FileAdapterFactory();
 

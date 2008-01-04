@@ -17,36 +17,19 @@ namespace dnppv.fileadapterfactory
 
         public FileAdapterFactory()
         {
-            LoadFileAdapterMappingsFromConfig();
+            LoadFileAdapterMappingsViaMicrokernel();
         }
 
-        //<configuration>
-        //  <fileAdapterFactory>
-        //    <fileAdapter extension="txt" implementation="typename, assemblyname"/>
-        //    <fileAdapter extension="mid" implementation="typename, assemblyname"/>
-        //  </fileAdapterFactory>
-        internal void LoadFileAdapterMappingsFromConfig()
+        internal void LoadFileAdapterMappingsViaMicrokernel()
         {
-            try
-            {
-                Configuration appConfig = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                ConfigurationSection fafSection = appConfig.GetSection("fileAdapterFactory");
+            string[] comments = ralfw.Microkernel.DynamicBinder.GetComments<IFileAdapter>();
 
-                XmlDocument xmlFafSection = new XmlDocument();
-                xmlFafSection.LoadXml(fafSection.SectionInformation.GetRawXml());
-
-                this.fileAdapterMappings = new Dictionary<string, Type>();
-                foreach (XmlElement xmlFileAdapter in xmlFafSection.SelectNodes("fileAdapterFactory/fileAdapter"))
-                    this.fileAdapterMappings.Add(
-                        xmlFileAdapter.Attributes["extension"].Value.ToLower(),
-                        Type.GetType(xmlFileAdapter.Attributes["implementation"].Value));                        
-            }
-            catch(Exception ex)
-            {
-                throw new ApplicationException("Unable to load file adapter mappings from app.config!", ex);
-            }
+            this.fileAdapterMappings = new Dictionary<string, Type>();
+            for (int i = 0; i < comments.Length; i++)
+                this.fileAdapterMappings.Add(
+                    comments[i],
+                    ralfw.Microkernel.DynamicBinder.GetInstance<IFileAdapter>(i).GetType());
         }
-
 
         #region IFileAdapterFactory Members
         public IFileAdapter CreateFileAdapter(string filename)
