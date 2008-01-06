@@ -19,7 +19,7 @@ namespace test.blackbox.pilepatternrecognizer
             r = new dnppv.pilepatternrecognizer.PilePatternRecognizer();
 
             IPatternList pl;
-            using (RawTextFileAdapter fa = new RawTextFileAdapter(@"..\..\test3levelsnooverlap.txt"))
+            using (TextFileAdapter fa = new TextFileAdapter(@"..\..\test3levelsnooverlap.txt"))
             {
                 pl = r.DetectPatterns(fa);
                 Assert.AreEqual(10, pl.Count);
@@ -78,7 +78,7 @@ namespace test.blackbox.pilepatternrecognizer
             r = new dnppv.pilepatternrecognizer.PilePatternRecognizer();
 
             IPatternList pl;
-            using (RawTextFileAdapter fa = new RawTextFileAdapter(@"..\..\test3levelswithoverlap.txt"))
+            using (TextFileAdapter fa = new TextFileAdapter(@"..\..\test3levelswithoverlap.txt"))
             {
                 pl = r.DetectPatterns(fa);
                 Assert.AreEqual(11, pl.Count);

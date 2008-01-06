@@ -40,10 +40,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\bin\dnppv.contracts.patternrecognizer.dll</HintPath>
     </Reference>
-    <Reference Include="dnppv.patternfilter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\bin\dnppv.patternfilter.dll</HintPath>
-    </Reference>
     <Reference Include="dnppv.textfileadapter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\bin\dnppv.textfileadapter.dll</HintPath>
@@ -113,6 +109,12 @@
     <Content Include="test.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dnppv.patternfilter\dnppv.patternfilter.csproj">
+      <Project>{76C41E8F-E7AB-4FD5-998D-E4DD61AE397B}</Project>
+      <Name>dnppv.patternfilter</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

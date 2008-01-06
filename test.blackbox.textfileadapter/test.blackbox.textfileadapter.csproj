@@ -28,10 +28,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="dnppv.contracts.fileadapter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\bin\dnppv.contracts.fileadapter.dll</HintPath>
-    </Reference>
     <Reference Include="nunit.core, Version=2.2.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\nunit.core.dll</HintPath>
@@ -45,11 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="testNonWhitespace.cs" />
-    <Compile Include="testRaw.cs" />
+    <Compile Include="tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\dnppv.contracts.fileadapter\dnppv.contracts.fileadapter.vbproj">
+      <Project>{9AE8C5E8-1E22-4BA1-B68A-F34BE396CBC5}</Project>
+      <Name>dnppv.contracts.fileadapter</Name>
+    </ProjectReference>
     <ProjectReference Include="..\dnppv.textfileadapter\dnppv.textfileadapter.csproj">
       <Project>{494E8000-718A-4838-80AE-612D8020364D}</Project>
       <Name>dnppv.textfileadapter</Name>
@@ -60,9 +59,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="testLeer.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="test2.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
