@@ -12,13 +12,13 @@ using dnppv.midifileadapter;
 namespace test.whitebox.midifileadapter
 {
     [TestFixture]
-    public class testConverter
+    public class testMid2Xml
     {
         [Test]
         public void testStartConverterInBackground()
         {
             Midi2XmlConverter c = new Midi2XmlConverter();
-            XmlDocument xmlMid = c.Convert(@"..\..\test1-kling.mid");
+            XmlDocument xmlMid = c.Convert(@"..\..\test1 kling.mid");
             Assert.AreEqual("MIDIFile", xmlMid.DocumentElement.Name);
         }
     }

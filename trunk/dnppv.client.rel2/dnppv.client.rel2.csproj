@@ -44,14 +44,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\bin\dnppv.contracts.patternrecognizer.dll</HintPath>
     </Reference>
-    <Reference Include="dnppv.patternfilter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\bin\dnppv.patternfilter.dll</HintPath>
-    </Reference>
-    <Reference Include="dnppv.textfileadapter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\bin\dnppv.textfileadapter.dll</HintPath>
-    </Reference>
     <Reference Include="ralfw.Microkernel, Version=1.0.7.0, Culture=neutral, PublicKeyToken=cd710b926737c92c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\ralfw.Microkernel.dll</HintPath>
@@ -102,6 +94,26 @@
       <Link>dnppv.fileadapterfactory.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="..\bin\dnppv.fileadapterfactory.pdb">
+      <Link>dnppv.fileadapterfactory.pdb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\bin\dnppv.midifileadapter.dll">
+      <Link>dnppv.midifileadapter.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\bin\dnppv.midifileadapter.pdb">
+      <Link>dnppv.midifileadapter.pdb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\bin\dnppv.patternfilter.dll">
+      <Link>dnppv.patternfilter.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\bin\dnppv.patternfilter.pdb">
+      <Link>dnppv.patternfilter.pdb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="..\bin\dnppv.pile.dll">
       <Link>dnppv.pile.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -118,9 +130,24 @@
       <Link>dnppv.pilepatternrecognizer.pdb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test.txt">
+    <Content Include="..\bin\dnppv.textfileadapter.dll">
+      <Link>dnppv.textfileadapter.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="..\bin\dnppv.textfileadapter.pdb">
+      <Link>dnppv.textfileadapter.pdb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\bin\mid2xml.exe">
+      <Link>mid2xml.exe</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="test.txt">
+    </Content>
+    <Content Include="test1-kling.mid" />
+    <Content Include="test2-entchen.mid" />
+    <Content Include="test2.txt" />
+    <Content Include="test3-bach.mid" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

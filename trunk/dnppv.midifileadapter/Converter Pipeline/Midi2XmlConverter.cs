@@ -4,13 +4,31 @@ using System.Text;
 using System.Xml;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace dnppv.midifileadapter
 {
     internal class Midi2XmlConverter
     {
+        // source: http://www.c-sharpcorner.com/UploadFile/crajesh1981/RajeshPage103142006044841AM/RajeshPage1.aspx?ArticleID=63e02c1f-761f-44ab-90dd-8d2348b8c6d2
+        [DllImport("kernel32.dll", CharSet = CharSet.Auto)]
+        public static extern int GetShortPathName(
+                 [MarshalAs(UnmanagedType.LPTStr)]
+                 string path,
+                 [MarshalAs(UnmanagedType.LPTStr)]
+                 StringBuilder shortPath,
+                 int shortPathLength
+                 );
+
+
         public XmlDocument Convert(string midFilename)
         {
+            #region convert long filename to short for mid2xml.exe
+            StringBuilder bufferFilename = new StringBuilder(255);
+            GetShortPathName(midFilename, bufferFilename, bufferFilename.Capacity);
+            midFilename = bufferFilename.ToString();
+            #endregion
+
             Process p = new Process();
             p.StartInfo.FileName = "mid2xml.exe";
             p.StartInfo.Arguments = string.Format(@"-t 1 {0}", midFilename);
