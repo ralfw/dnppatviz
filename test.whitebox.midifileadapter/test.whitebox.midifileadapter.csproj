@@ -28,6 +28,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="dnppv.contracts.fileadapter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\dnppv.contracts.fileadapter.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.core, Version=2.2.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\nunit.core.dll</HintPath>
@@ -39,10 +43,17 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="TypeMock, Version=4.1.0.0, Culture=neutral, PublicKeyToken=3dae460033b8d8e2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\TypeMock.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="testConverter.cs" />
+    <Compile Include="testBlackbox.cs" />
+    <Compile Include="testXml2Signals.cs" />
+    <Compile Include="testMid2Xml.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="testAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\dnppv.midifileadapter\dnppv.midifileadapter.csproj">
@@ -51,7 +62,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="test1-kling.mid.xml" />
+    <Content Include="small.mid.xml" />
+    <Content Include="test1 kling.mid" />
+    <Content Include="test2 entchen.mid" />
+    <Content Include="test3 bach.mid" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

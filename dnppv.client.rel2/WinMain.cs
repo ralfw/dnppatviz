@@ -15,6 +15,7 @@ namespace dnppv.client.rel2
     public partial class WinMain : Form
     {
         private IFileAdapterFactory faf;
+        private IPatternFilter pf;
 
 
         public WinMain()
@@ -25,6 +26,7 @@ namespace dnppv.client.rel2
 
             ralfw.Microkernel.DynamicBinder.LoadBindings();
             this.faf = ralfw.Microkernel.DynamicBinder.GetInstance<IFileAdapterFactory>();
+            this.pf = ralfw.Microkernel.DynamicBinder.GetInstance<IPatternFilter>();
         }
 
 
@@ -57,10 +59,7 @@ namespace dnppv.client.rel2
             {
                 fa.Open(filename);
 
-                IPatternFilter pf;
-                pf = new dnppv.patternfilter.PatternFilter();
-
-                pl = pf.Analyse(fa);
+                pl = this.pf.Analyse(fa);
 
                 this.Text = string.Format("Mustervisualisierung [{0}]", System.IO.Path.GetFileName(filename));
                 this.toolStripStatusLabel1.Text = string.Format("{0} Muster in {1} Signalen gefunden", pl.Count, pl.SignalCount);
