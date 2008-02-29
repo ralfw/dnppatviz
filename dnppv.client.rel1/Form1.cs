@@ -20,7 +20,7 @@ namespace dnppv.client.rel1
 
             this.openFileDialog1.InitialDirectory = Environment.CurrentDirectory;
 
-            ralfw.Microkernel.DynamicBinder.LoadBindings();
+            ralfw.Unity.ContainerProvider.Configure();
         }
 
         private void listView1_Resize(object sender, EventArgs e)
@@ -47,10 +47,12 @@ namespace dnppv.client.rel1
 
             // pattern extractor needs to match the textfileadapter!!! see below
             //using (IFileAdapter fa = new dnppv.textfileadapter.NonWhitespaceTextFileAdapter(filename))
-            using (IFileAdapter fa = new dnppv.textfileadapter.RawTextFileAdapter(filename))
+            using (IFileAdapter fa = ralfw.Unity.ContainerProvider.Get().Get<IFileAdapter>())
             {
+                fa.Open(filename);
+
                 IPatternFilter pf;
-                pf = new dnppv.patternfilter.PatternFilter();
+                pf = ralfw.Unity.ContainerProvider.Get().Get<IPatternFilter>();
 
                 pl = pf.Analyse(fa);
             }

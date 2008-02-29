@@ -14,12 +14,14 @@ namespace dnppv.textfileadapter
         char[] buffer;
 
 
-        public RawTextFileAdapter() { }
-
         public RawTextFileAdapter(string filename)
         {
             this.Open(filename);
         }
+
+
+        [Microsoft.Practices.Unity.InjectionConstructor] // muss als letzter ctor notiert sein, sonst fehler bei instanzierung mit unity
+        public RawTextFileAdapter() { }
 
 
         #region IFileAdapter Members

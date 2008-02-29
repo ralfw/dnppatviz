@@ -24,9 +24,9 @@ namespace dnppv.client.rel2
 
             this.openFileDialog1.InitialDirectory = Environment.CurrentDirectory;
 
-            ralfw.Microkernel.DynamicBinder.LoadBindings();
-            this.faf = ralfw.Microkernel.DynamicBinder.GetInstance<IFileAdapterFactory>();
-            this.pf = ralfw.Microkernel.DynamicBinder.GetInstance<IPatternFilter>();
+            ralfw.Unity.ContainerProvider.Configure();
+            this.faf = ralfw.Unity.ContainerProvider.Get().Get<IFileAdapterFactory>();
+            this.pf = ralfw.Unity.ContainerProvider.Get().Get<IPatternFilter>();
         }
 
 

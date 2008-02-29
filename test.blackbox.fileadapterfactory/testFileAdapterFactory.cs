@@ -18,8 +18,8 @@ namespace test.blackbox.fileadapterfactory
         [Test]
         public void testExtensions()
         {
-            ralfw.Microkernel.DynamicBinder.ClearBindings();
-            ralfw.Microkernel.DynamicBinder.LoadBindings();
+            ralfw.Unity.ContainerProvider.Clear();
+            ralfw.Unity.ContainerProvider.Configure();
 
             IFileAdapterFactory faf;
             faf = new FileAdapterFactory();
@@ -33,8 +33,8 @@ namespace test.blackbox.fileadapterfactory
         [Test]
         public void testCreate()
         {
-            ralfw.Microkernel.DynamicBinder.ClearBindings();
-            ralfw.Microkernel.DynamicBinder.LoadBindings();
+            ralfw.Unity.ContainerProvider.Clear();
+            ralfw.Unity.ContainerProvider.Configure();
 
             IFileAdapterFactory faf;
             faf = new FileAdapterFactory();
@@ -47,6 +47,9 @@ namespace test.blackbox.fileadapterfactory
             fa = faf.CreateFileAdapter("test.mid");
             Assert.IsInstanceOfType(typeof(MockupFileAdapterB), fa);
             Assert.AreEqual("test.mid", fa.Filename);
+
+            fa = faf.CreateFileAdapter("test.xyz");
+            Assert.IsNull(fa);
         }
     }
 }

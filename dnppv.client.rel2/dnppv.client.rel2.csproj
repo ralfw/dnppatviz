@@ -44,9 +44,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\bin\dnppv.contracts.patternrecognizer.dll</HintPath>
     </Reference>
-    <Reference Include="ralfw.Microkernel, Version=1.0.7.0, Culture=neutral, PublicKeyToken=cd710b926737c92c, processorArchitecture=MSIL">
+    <Reference Include="ralfw.Unity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\ralfw.Microkernel.dll</HintPath>
+      <HintPath>..\lib\ralfw.Unity.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
