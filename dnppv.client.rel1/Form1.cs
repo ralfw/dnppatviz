@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 using dnppv.contracts.fileadapter;
 using dnppv.contracts.patternfilter;
-using dnppv.contracts.patternrecognizer;
+using dnppv.contracts.domainmodel;
 
 namespace dnppv.client.rel1
 {

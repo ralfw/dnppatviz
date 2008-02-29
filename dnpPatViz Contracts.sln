@@ -14,6 +14,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "dnppv.contracts.patternreco
 		{9AE8C5E8-1E22-4BA1-B68A-F34BE396CBC5} = {9AE8C5E8-1E22-4BA1-B68A-F34BE396CBC5}
 	EndProjectSection
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "dnppv.contracts.domainmodel", "dnppv.contracts.domainmodel\dnppv.contracts.domainmodel.vbproj", "{282E79DD-7BF7-4B44-A03A-CB1A3995D604}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{7E90D9B1-FA65-467E-9F54-55BE68987427}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E90D9B1-FA65-467E-9F54-55BE68987427}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E90D9B1-FA65-467E-9F54-55BE68987427}.Release|Any CPU.Build.0 = Release|Any CPU
+		{282E79DD-7BF7-4B44-A03A-CB1A3995D604}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{282E79DD-7BF7-4B44-A03A-CB1A3995D604}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{282E79DD-7BF7-4B44-A03A-CB1A3995D604}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{282E79DD-7BF7-4B44-A03A-CB1A3995D604}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

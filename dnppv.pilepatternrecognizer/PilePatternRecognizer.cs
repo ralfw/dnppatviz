@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 
 using System.Diagnostics;
 
+using dnppv.contracts.domainmodel;
 using dnppv.contracts.fileadapter;
 using dnppv.contracts.patternrecognizer;
 using dnppv.pile;

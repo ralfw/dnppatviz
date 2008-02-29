@@ -1,33 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Alphabetical" MembersFormat="FullSignature">
   <Font Name="Tahoma" Size="8.25" />
-  <Interface Name="dnppv.contracts.patternrecognizer.IPattern">
-    <Position X="4.75" Y="2.25" Width="3.25" />
-    <TypeIdentifier>
-      <FileName>IPatternList.vb</FileName>
-      <HashCode>AAAAAAAAAAACgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Occurrence(System.Int32)" />
-    </ShowAsAssociation>
-  </Interface>
-  <Interface Name="dnppv.contracts.patternrecognizer.IPatternList">
-    <Position X="1.25" Y="2.25" Width="2.5" />
-    <TypeIdentifier>
-      <FileName>IPatternList.vb</FileName>
-      <HashCode>AAAAAAAAACAAAAAAAAAAAAQQAAAAAAAAAAAAAAAAAAA=</HashCode>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Pattern(System.Int32)" />
-    </ShowAsAssociation>
-  </Interface>
-  <Interface Name="dnppv.contracts.patternrecognizer.IPatternOccurrence">
-    <Position X="6.5" Y="4" Width="1.5" />
-    <TypeIdentifier>
-      <FileName>IPatternList.vb</FileName>
-      <HashCode>AAIAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-    </TypeIdentifier>
-  </Interface>
   <Interface Name="dnppv.contracts.patternrecognizer.IPatternRecognizer">
     <Position X="0.5" Y="1" Width="3.25" />
     <TypeIdentifier>
