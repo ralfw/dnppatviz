@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+using dnppv.contracts.fileadapter;
+
+namespace test.blackbox.fileadapterfactory
+{
+    public class MockupFileAdapterA : IFileAdapter
+    {
+        private string filename;
+
+
+        #region IFileAdapter Members
+
+        public void Close()
+        {
+        }
+
+        public string CurrentSignal
+        {
+            get
+            {
+                return "a";
+            }
+        }
+
+        public string Filename
+        {
+            get { return this.filename; }
+        }
+
+        public int Length
+        {
+            get { return this.filename.Length; }
+        }
+
+        public void Open(string filename)
+        {
+            this.filename = filename;
+        }
+
+        public bool Read()
+        {
+            return true;
+        }
+
+        #endregion
+
+        #region IDisposable Members
+
+        public void Dispose()
+        {
+        }
+
+        #endregion
+    }
+}

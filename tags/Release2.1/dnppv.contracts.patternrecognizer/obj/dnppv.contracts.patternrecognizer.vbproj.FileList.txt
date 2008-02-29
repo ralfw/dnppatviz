@@ -1,0 +1,15 @@
+bin\Debug\dnppv.contracts.patternrecognizer.dll
+bin\Debug\dnppv.contracts.patternrecognizer.pdb
+bin\Debug\dnppv.contracts.patternrecognizer.xml
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\dnppv.contracts.patternrecognizer.Resources.resources
+obj\Debug\dnppv.contracts.patternrecognizer.vbproj.GenerateResource.Cache
+obj\Debug\dnppv.contracts.patternrecognizer.dll
+obj\Debug\dnppv.contracts.patternrecognizer.xml
+obj\Debug\dnppv.contracts.patternrecognizer.pdb
+bin\Debug\dnppv.contracts.fileadapter.dll
+bin\Debug\dnppv.contracts.fileadapter.pdb
+bin\Debug\dnppv.contracts.fileadapter.xml
+bin\Debug\dnppv.contracts.domainmodel.dll
+bin\Debug\dnppv.contracts.domainmodel.pdb
+bin\Debug\dnppv.contracts.domainmodel.xml

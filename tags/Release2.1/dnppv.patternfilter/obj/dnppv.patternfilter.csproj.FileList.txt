@@ -1,0 +1,5 @@
+..\bin\dnppv.patternfilter.dll
+..\bin\dnppv.patternfilter.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\dnppv.patternfilter.dll
+obj\Debug\dnppv.patternfilter.pdb
