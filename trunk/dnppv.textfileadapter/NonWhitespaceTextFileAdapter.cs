@@ -14,12 +14,14 @@ namespace dnppv.textfileadapter
         int index;
 
 
-        public NonWhitespaceTextFileAdapter() { }
-
         public NonWhitespaceTextFileAdapter(string filename)
         {
             this.Open(filename);
         }
+
+        [Microsoft.Practices.Unity.InjectionConstructor] // muss als letzter ctor notiert sein, sonst fehler bei instanzierung mit unity
+        public NonWhitespaceTextFileAdapter() { }
+
 
 
         public string Text

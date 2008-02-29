@@ -13,14 +13,14 @@ namespace dnppv.midifileadapter
         private List<string> signals;
         private int indexCurrSignal;
 
-
-        public MidiFileAdapter() { }
-
         public MidiFileAdapter(string filename)
         {
             this.Open(filename);
         }
 
+        [Microsoft.Practices.Unity.InjectionConstructor] // muss als letzter ctor notiert sein, sonst fehler bei instanzierung mit unity
+        public MidiFileAdapter() { }
+        
 
         #region IFileAdapter Members
 

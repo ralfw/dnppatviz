@@ -15,7 +15,7 @@ namespace dnppv.patternfilter
         public IPatternList Analyse(IFileAdapter file)
         {
             IPatternRecognizer pr;
-            pr = ralfw.Microkernel.DynamicBinder.GetInstance<IPatternRecognizer>();
+            pr = ralfw.Unity.ContainerProvider.Get().Get<IPatternRecognizer>();
             return pr.DetectPatterns(file);
         }
 

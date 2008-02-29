@@ -4,6 +4,9 @@ using System.Text;
 using System.Xml;
 using System.Configuration;
 
+using Microsoft.Practices.Unity;
+using Microsoft.Practices.Unity.Configuration;
+
 using dnppv.contracts.fileadapter;
 
 
@@ -12,7 +15,7 @@ namespace dnppv.fileadapterfactory
     public class FileAdapterFactory : IFileAdapterFactory
     {
         // mapping file extension to file adapter type
-        private Dictionary<string, Type> fileAdapterMappings;
+        private List<string> fileExtensionsSupported;
 
 
         public FileAdapterFactory()
@@ -22,22 +25,17 @@ namespace dnppv.fileadapterfactory
 
         internal void LoadFileAdapterMappingsViaMicrokernel()
         {
-            string[] comments = ralfw.Microkernel.DynamicBinder.GetComments<IFileAdapter>();
-
-            this.fileAdapterMappings = new Dictionary<string, Type>();
-            for (int i = 0; i < comments.Length; i++)
-                this.fileAdapterMappings.Add(
-                    comments[i],
-                    ralfw.Microkernel.DynamicBinder.GetInstance<IFileAdapter>(i).GetType());
+            fileExtensionsSupported = new List<string>(ralfw.Unity.ContainerProvider.Get().GetAllNames<IFileAdapter>());
         }
+
 
         #region IFileAdapterFactory Members
         public IFileAdapter CreateFileAdapter(string filename)
         {
             string ext = System.IO.Path.GetExtension(filename).Substring(1).ToLower(); // get extension and trim leading "."
-            if (this.fileAdapterMappings.ContainsKey(ext))
+            if (this.fileExtensionsSupported.Exists(delegate(string extSupported) { return extSupported==ext; }))
             {
-                IFileAdapter fa = (IFileAdapter)Activator.CreateInstance(this.fileAdapterMappings[ext]);
+                IFileAdapter fa = ralfw.Unity.ContainerProvider.Get().Get<IFileAdapter>(ext);
                 fa.Open(filename);
                 return fa;
             }
@@ -50,7 +48,7 @@ namespace dnppv.fileadapterfactory
         {
             get 
             {
-                return new List<string>(this.fileAdapterMappings.Keys).ToArray();
+                return this.fileExtensionsSupported.ToArray();
             }
         }
         #endregion
