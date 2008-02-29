@@ -10,3 +10,6 @@ obj\Debug\dnppv.contracts.patternrecognizer.pdb
 bin\Debug\dnppv.contracts.fileadapter.dll
 bin\Debug\dnppv.contracts.fileadapter.pdb
 bin\Debug\dnppv.contracts.fileadapter.xml
+bin\Debug\dnppv.contracts.domainmodel.dll
+bin\Debug\dnppv.contracts.domainmodel.pdb
+bin\Debug\dnppv.contracts.domainmodel.xml

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-using dnppv.contracts.patternrecognizer;
+using dnppv.contracts.domainmodel;
 
 namespace test.arcdiagram
 {

@@ -47,7 +47,6 @@
     <Import Include="System.Diagnostics" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IPatternList.vb" />
     <Compile Include="IPatternRecognizer.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -84,6 +83,12 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="PatternRecognizer.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dnppv.contracts.domainmodel\dnppv.contracts.domainmodel.vbproj">
+      <Project>{282E79DD-7BF7-4B44-A03A-CB1A3995D604}</Project>
+      <Name>dnppv.contracts.domainmodel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

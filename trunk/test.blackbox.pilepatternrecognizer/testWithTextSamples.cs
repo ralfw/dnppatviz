@@ -6,6 +6,7 @@ using System.Diagnostics;
 
 using NUnit.Framework;
 
+using dnppv.contracts.domainmodel;
 using dnppv.contracts.patternrecognizer;
 using dnppv.textfileadapter;
 

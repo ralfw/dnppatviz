@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+using dnppv.contracts.domainmodel;
 using dnppv.contracts.patternrecognizer;
 
 namespace dnppv.pilepatternrecognizer

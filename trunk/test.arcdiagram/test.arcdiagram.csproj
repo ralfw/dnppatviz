@@ -28,9 +28,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="dnppv.contracts.patternrecognizer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="dnppv.contracts.domainmodel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\bin\dnppv.contracts.patternrecognizer.dll</HintPath>
+      <HintPath>..\bin\dnppv.contracts.domainmodel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

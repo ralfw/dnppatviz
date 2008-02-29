@@ -28,6 +28,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="dnppv.contracts.domainmodel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\dnppv.contracts.domainmodel.dll</HintPath>
+    </Reference>
     <Reference Include="dnppv.contracts.fileadapter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\bin\dnppv.contracts.fileadapter.dll</HintPath>
@@ -35,10 +39,6 @@
     <Reference Include="dnppv.contracts.patternfilter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\bin\dnppv.contracts.patternfilter.dll</HintPath>
-    </Reference>
-    <Reference Include="dnppv.contracts.patternrecognizer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\bin\dnppv.contracts.patternrecognizer.dll</HintPath>
     </Reference>
     <Reference Include="ralfw.Unity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -86,6 +86,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\bin\dnppv.contracts.patternrecognizer.dll">
+      <Link>dnppv.contracts.patternrecognizer.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\bin\dnppv.contracts.patternrecognizer.pdb">
+      <Link>dnppv.contracts.patternrecognizer.pdb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="..\bin\dnppv.patternfilter.dll">
       <Link>dnppv.patternfilter.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

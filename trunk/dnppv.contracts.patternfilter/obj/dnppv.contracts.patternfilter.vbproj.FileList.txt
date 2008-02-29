@@ -13,3 +13,6 @@ obj\Debug\dnppv.contracts.patternfilter.vbproj.GenerateResource.Cache
 obj\Debug\dnppv.contracts.patternfilter.dll
 obj\Debug\dnppv.contracts.patternfilter.xml
 obj\Debug\dnppv.contracts.patternfilter.pdb
+bin\Debug\dnppv.contracts.domainmodel.dll
+bin\Debug\dnppv.contracts.domainmodel.pdb
+bin\Debug\dnppv.contracts.domainmodel.xml

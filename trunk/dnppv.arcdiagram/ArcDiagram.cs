@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using System.Diagnostics;
 
-using dnppv.contracts.patternrecognizer;
+using dnppv.contracts.domainmodel;
 
 namespace dnppv.arcdiagram
 {

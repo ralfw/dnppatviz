@@ -87,6 +87,12 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dnppv.contracts.domainmodel\dnppv.contracts.domainmodel.vbproj">
+      <Project>{282E79DD-7BF7-4B44-A03A-CB1A3995D604}</Project>
+      <Name>dnppv.contracts.domainmodel</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

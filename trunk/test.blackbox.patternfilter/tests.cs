@@ -10,6 +10,7 @@ using dnppv.textfileadapter;
 using dnppv.contracts.fileadapter;
 using dnppv.contracts.patternfilter;
 using dnppv.contracts.patternrecognizer;
+using dnppv.contracts.domainmodel;
 
 namespace test.blackbox.patternfilter
 {
